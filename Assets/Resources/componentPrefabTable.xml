@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ComponentPrefabTable>
+	<Entries>
+		<Entry Name="木头">
+			<Prefab>木头1</Prefab>
+		</Entry>
+		<Entry Name="圆柱">
+			<Prefab>圆柱1</Prefab>
+		</Entry>
+		<Entry Name="墙面">
+			<Prefab>圆柱2</Prefab>
+		</Entry>
+	</Entries>
+</ComponentPrefabTable>

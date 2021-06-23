@@ -1,0 +1,109 @@
+{
+    "name": "InputActionMap",
+    "maps": [
+        {
+            "name": "Free Look Camera Controls",
+            "id": "bfd9e540-bf54-4fe8-911d-c85c5f03ca5c",
+            "actions": [
+                {
+                    "name": "Mouse Zoom",
+                    "type": "PassThrough",
+                    "id": "c9cc0da3-b32b-4964-9584-5df85d970ff6",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MouseLookXY",
+                    "type": "PassThrough",
+                    "id": "c25f0c29-d556-42d3-a8ba-ec5ed2d2347b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Mouse Drag",
+                    "type": "PassThrough",
+                    "id": "75f7a580-c1c8-4d7a-9a8c-7ab737e3935b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "14ecaf6a-9654-402c-9604-9db9345cd3e1",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70ee1751-5468-4903-ab46-d6784ac970e6",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseLookXY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34851604-bdd8-4bc5-b5d8-32af6e2bdcc8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UIActions",
+            "id": "96f17b81-fd77-4dd3-8bd9-dceff799cf4d",
+            "actions": [
+                {
+                    "name": "Menu Enter",
+                    "type": "Value",
+                    "id": "84c5d229-44ab-4709-960b-fd7843b5d68e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5b72d4f2-3e43-4a6f-830b-6b1a8a111c11",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7ef6969-92c1-4688-bef6-5373eb6aa5e7",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

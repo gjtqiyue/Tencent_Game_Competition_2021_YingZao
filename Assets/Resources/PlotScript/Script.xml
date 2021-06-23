@@ -1,0 +1,52 @@
+<Root>
+	<Scenario name="Intro">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-900, -115</From>
+				<To>-900, 0</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
+		<Line name="main">Hello world!</Line>
+		<Line name="main">fdsfdsf dsfsdfsdfs dfsdfsdfsf</Line>
+		<Line name="main">dfsdfsdsss   dfsdfsdfsf gggggggggggggggggggggggg</Line>
+		<Line name="main">Goodbye</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-900, 0</From>
+				<To>-900, -115</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
+		<GoTo>Tutorial</GoTo>
+	</Scenario>
+
+	<Scenario name="Tutorial">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>900, -115</From>
+				<To>900, 0</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
+		<Line name="main">Hello it's me again</Line>
+		<Line name="main">damnfdsfd dddddd</Line>
+		<Line name="main">dfsdfsdsss   dfsdfsdfsf gggggggggggggggggggggggg</Line>
+		<Line name="main">Goodbye</Line>
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>900, 0</From>
+				<To>900, -115</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
+	</Scenario>
+</Root>
