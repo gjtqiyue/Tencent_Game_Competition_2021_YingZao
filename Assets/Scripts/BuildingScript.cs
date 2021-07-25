@@ -11,23 +11,26 @@ using UnityEngine.EventSystems;
 public class BuildingScript : BaseControlUnit
 {
     public static BuildingScript Instance;
+    private int buildProgress;
+    private int buildTotal;
 
     public BlueprintSelect blueprintSelect;
     public ComponentSelect componentSelect;
     public TextMeshProUGUI blueprintButtonText;
     public GameObject blueprintImage;
+    public GameObject infoPanel;
     public Material previewMat;
 
     [SerializeField]
     private List<string> componentNameSet = new List<string>();
     [SerializeField]
     private List<Sprite> componentImageSet = new List<Sprite>();
-
     [SerializeField]
     private bool isBlueprintOpen = false;
     [SerializeField]
     private BlueprintType currentBlueprint;
 
+    //private data
     private ConstructionData data;
     private ComponentPrefabTable prefabTable;
     private ConstructionOrder currentStep;
@@ -36,6 +39,8 @@ public class BuildingScript : BaseControlUnit
     private GameObject spawnedComponentObj;
     private ConsturctionComponent selectedComponent;
     private List<GameObject> spawnedObjects = new List<GameObject>();
+    private Transform mainParent;
+    private GameObject toSpawn;
 
     public delegate void OnBlueprintBuildFinish();
     public delegate void OnBlueprintBuildReset();
@@ -54,8 +59,14 @@ public class BuildingScript : BaseControlUnit
 
         blueprintImage.gameObject.SetActive(false);
 
+        blueprintBuildFinishDelegate += CheckIfBuildingCompleted;
+
+        mainParent = GameObject.Find("main building").transform;
         data = ConstructionData.Load(Path.Combine(Application.dataPath, "Resources/data.xml"));
         prefabTable = ComponentPrefabTable.Load(Path.Combine(Application.dataPath, "Resources/componentPrefabTable.xml"));
+
+        buildTotal = Enum.GetValues(typeof(BlueprintType)).Length;
+        buildProgress = 0;
     }
 
     private void Reset()
@@ -63,10 +74,6 @@ public class BuildingScript : BaseControlUnit
         blueprintBuildResetDelegate?.Invoke();
         blueprintSelect.gameObject.SetActive(true);
         currentStep = null;
-        foreach (GameObject obj in spawnedObjects)
-        {
-            Destroy(obj);
-        }
     }
 
     public static BuildingScript GetInstance() { return Instance; }
@@ -114,7 +121,6 @@ public class BuildingScript : BaseControlUnit
     }
 
 
-
     IEnumerator Construct(BlueprintType t)
     {
         //setup the scene, which will just be a empty plane or empty scene
@@ -124,7 +130,16 @@ public class BuildingScript : BaseControlUnit
         yield return StartCoroutine(ViewBlueprint());
 
         //populate component UI
-        componentSelect.PopulateComponentButtons(componentNameSet, componentImageSet);
+        string[] list = b.componentList.Split(',');
+        List<string> nameSet = new List<string>();
+        List<Sprite> imgSet = new List<Sprite>();
+        for (int i=0; i<list.Length; i++)
+        {
+            int idx = int.Parse(list[i]);
+            nameSet.Add(componentNameSet[idx]);
+            imgSet.Add(componentImageSet[idx]);
+        }
+        componentSelect.PopulateComponentButtons(nameSet, imgSet);
 
         //start to give instruction based on order
         int order = 0;
@@ -182,6 +197,34 @@ public class BuildingScript : BaseControlUnit
                             break;
                         }
                     }
+                    else if (Mouse.current.leftButton.isPressed && Keyboard.current.numpadPlusKey.isPressed)
+                    {
+                        //cheat code, build all at once
+                        foreach (ComponentTransformInfo info in allPossibleSpawnPoints)
+                        {
+                            Vector3 loc = new Vector3(info.px, info.py, info.pz);
+                            Quaternion rot = Quaternion.Euler(info.rx, info.ry, info.rz);
+                            Debug.Log(loc.ToString());
+                            GameObject gameObj = Instantiate(toSpawn, mainParent.position + loc * mainParent.localScale.x, rot, mainParent);
+                        }
+                        allPossibleSpawnPoints.Clear();
+                        foreach (GameObject key in previewGameObjects.Keys)
+                        {
+                            Destroy(key);
+                        }
+                        previewGameObjects.Clear();
+                        spawnedObjects.Add(spawnedComponentObj);
+                        
+                        if (spawnedComponentObj != null) Destroy(spawnedComponentObj);
+                        spawnedComponentObj = null;
+
+                        if (CheckIfStepCompleted(selectedComponent))
+                        {
+                            selectedComponent = null;
+                            order += 1;
+                            break;
+                        }
+                    }
                     else if (Mouse.current.rightButton.isPressed)
                     {
                         ResetSpawnedObjects();
@@ -193,8 +236,15 @@ public class BuildingScript : BaseControlUnit
         }
 
         Debug.Log("finish all steps");
+        buildProgress++;
         blueprintBuildFinishDelegate?.Invoke();
         Reset();
+    }
+
+    void ShowInfoPanel(string info, string img)
+    {
+        infoPanel.SetActive(true);
+        infoPanel.GetComponent<InfoPanel>().UpdateInfo(info, img);
     }
 
     private bool CheckIfStepCompleted(ConsturctionComponent component)
@@ -202,6 +252,9 @@ public class BuildingScript : BaseControlUnit
         if (allPossibleSpawnPoints.Count == 0)
         {
             Debug.Log("finish current compoenent build");
+            //show info panel for this component if necessary
+            ShowInfoPanel(component.info, component.img);
+
             currentStep.components.Remove(component);   //remove current component from step list
         }
 
@@ -214,6 +267,14 @@ public class BuildingScript : BaseControlUnit
         return false;
     }
 
+    private void CheckIfBuildingCompleted()
+    {
+        if (buildProgress >= buildTotal)
+        {
+            //Finish all the build, trigger the camera track
+            Debug.Log("finish everything, trigger dolly track");
+        }
+    }
 
     internal void SpawnComponent(string v)
     {
@@ -246,23 +307,47 @@ public class BuildingScript : BaseControlUnit
         {
             if (prefabTable.map[i].name == name)
             {
-                GameObject toSpawn = Resources.Load<GameObject>("Prefabs/" + prefabTable.map[i].prefabName);
+                toSpawn = Resources.Load<GameObject>("Prefabs/" + prefabTable.map[i].prefabName);
+                if (toSpawn == null) Debug.LogError("No prefab match name " + name);
                 for (int j=0; j<allPossibleSpawnPoints.Count; j++)
                 {
                     ComponentTransformInfo info = allPossibleSpawnPoints[j];
                     loc = new Vector3(info.px, info.py, info.pz);
                     rot = Quaternion.Euler(info.rx, info.ry, info.rz);
                     Debug.Log(loc.ToString());
-                    GameObject gameObj = Instantiate(toSpawn, loc, rot);
+                    GameObject gameObj = Instantiate(toSpawn, mainParent.position + loc * mainParent.localScale.x, rot, mainParent);
                     //change material to preview material
-                    gameObj.GetComponent<MeshRenderer>().material = previewMat;
-                    gameObj.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                    if (gameObj.GetComponent<MeshRenderer>())
+                    {
+                        Material[] intMaterials = new Material[gameObj.GetComponent<MeshRenderer>().materials.Length];
+                        for (int t = 0; t < intMaterials.Length; t++)
+                        {
+                            intMaterials[t] = previewMat;
+                        }
+                        gameObj.GetComponent<MeshRenderer>().materials = intMaterials;
+                        gameObj.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                    }
+                    else
+                    {
+                        MeshRenderer[] meshRenderers = gameObj.GetComponentsInChildren<MeshRenderer>();
+                        for (int u=0; u<meshRenderers.Length; u++)
+                        {
+                            Material[] intMaterials = new Material[meshRenderers[u].materials.Length];
+                            for (int t = 0; t < intMaterials.Length; t++)
+                            {
+                                intMaterials[t] = previewMat;
+                            }
+                            meshRenderers[u].materials = intMaterials;
+                            meshRenderers[u].shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                        }
+                    }
                     previewGameObjects.Add(gameObj, info);
                 }
+                
 
                 //spawn one for actual compoenent to place
                 //find mouse location
-                spawnedComponentObj = Instantiate(toSpawn, new Vector3(0,-10,0), Quaternion.identity); //spawn objects off screen
+                spawnedComponentObj = Instantiate(toSpawn, new Vector3(0,-10,0), Quaternion.identity, mainParent); //spawn objects off screen
                 spawnedComponentObj.gameObject.layer = 2; //Ignore ray cast for pre-spawn object
             }
         }

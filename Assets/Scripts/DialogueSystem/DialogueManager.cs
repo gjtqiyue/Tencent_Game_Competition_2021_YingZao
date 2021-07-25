@@ -12,6 +12,7 @@ public class DialogueManager : BaseControlUnit
     public bool allowSkip = false;
 
     public delegate void OnDialogueEventFinished();
+    public delegate void OnDialogueEventStart();
     public delegate void OnScenarioEventStart();
     public delegate void OnScenarioEventEnd();
 
@@ -44,9 +45,6 @@ public class DialogueManager : BaseControlUnit
     private void Start()
     {
         ParsePlotScript();
-
-
-        TriggerScenario("Intro");
     }
 
     public void AddScenario(Scenario s)
@@ -62,7 +60,9 @@ public class DialogueManager : BaseControlUnit
 
     public void TriggerScenario(string name)
     {
+        
         if (!scenarioCollection.ContainsKey(name)) throw new System.Exception("No matching scenario found!");
+        if (currentScenario != null && currentScenario.name == name && currentScenario.isPlaying) return;
 
         //if there is currently something playing, and no global scenario, then register it to the global scenario
         //otherwise give up
@@ -92,6 +92,7 @@ public class DialogueManager : BaseControlUnit
 
         //start a coroutine to keep triggering the next event
         //disable input for player other than dialogue interaction
+        scenarioEventStartDelegate?.Invoke();
         StartCoroutine(ScenarioCoroutine());
     }
 
@@ -105,6 +106,7 @@ public class DialogueManager : BaseControlUnit
 
         //assign current to prev and trigger next
         prevScenario = currentScenario;
+        currentScenario.Reset();
         if (currentScenario.next != null)
         {
             TriggerScenario(currentScenario.next);
@@ -115,14 +117,15 @@ public class DialogueManager : BaseControlUnit
             scenarioEventEndDelegate?.Invoke();
             prevScenario = null;
         }
+        
     }
 
     public void TriggerFigure(Figure e)
     {
         //determine if it's a NPC or the player
-
+        //npc on the right and mc on the left
         //tell the view to do the transition
-        view.FigureTransition(e.character, e.from, e.to, e.transitionTime);
+        view.FigureTransition(e.character, e.from, e.to, e.transitionTime, e.screenPosition);
     }
 
     public void TriggerQuestion(Question q)
@@ -133,10 +136,11 @@ public class DialogueManager : BaseControlUnit
     public void TriggerLine(Line l)
     {
         //show dialogue panel
-        StartCoroutine(PrintLineToScreen(l.content));
+        StartCoroutine(PrintLineToScreen(l.content, l.name));
     }
+
     private bool skipTrigger = true;
-    IEnumerator PrintLineToScreen(string text)
+    IEnumerator PrintLineToScreen(string text, string character)
     {
         float printSpeed = view.printingSpeed;
         int i = 0;
@@ -145,7 +149,7 @@ public class DialogueManager : BaseControlUnit
             //TODO: add fade feature using html text 
             while (text[i] == ' ') i++;
             i++;
-            view.UpdateLineView(text.Substring(0, i));
+            view.UpdateLineView(character, text.Substring(0, i));
             yield return new WaitForSeconds(printSpeed);
 
             if (allowSkip)
@@ -153,7 +157,7 @@ public class DialogueManager : BaseControlUnit
                 if (skipTrigger && Keyboard.current.fKey.isPressed)
                 {
                     //print the whole string
-                    view.UpdateLineView(text);
+                    view.UpdateLineView(character, text);
                     skipTrigger = false;
                     while (true)
                     {

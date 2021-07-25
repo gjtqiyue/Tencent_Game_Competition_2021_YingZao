@@ -13,7 +13,7 @@ public class XMLParser
         XElement xmlDoc = XElement.Parse(text);
         foreach (XElement scenario in xmlDoc.Elements("Scenario"))
         {
-            Scenario ss = new Scenario(scenario.Attribute("name").Value);
+            Scenario ss = new Scenario(scenario.Attribute("name").Value, scenario.Attribute("isLoop").Value=="True");
             foreach (XElement activity in scenario.Elements())
             {
                switch (activity.Name.ToString())

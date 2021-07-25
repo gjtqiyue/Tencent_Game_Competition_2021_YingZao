@@ -210,5 +210,9 @@ public class GameManager : MonoBehaviour
         gameResumeDelegate?.Invoke();
         isGamePaused = false;
     }
-    
+
+    public GameObject GetPlayer()
+    {
+        return GameObject.FindGameObjectWithTag("Player");
+    }
 }

@@ -9,6 +9,8 @@ public class Blueprint
 {
     [XmlAttribute("Name")]
     public string name;
+    [XmlAttribute("ComponentList")]
+    public string componentList;
 
     [XmlArray("ConstructionOrders")]
     [XmlArrayItem("ConstructionOrder")]
@@ -41,6 +43,9 @@ public class ConsturctionComponent
 
     [XmlAttribute("Info")]
     public string info;
+
+    [XmlAttribute("Img")]
+    public string img;
 
     [XmlArray("TransformInfo")]
     [XmlArrayItem("ComponentTransformInfo")]

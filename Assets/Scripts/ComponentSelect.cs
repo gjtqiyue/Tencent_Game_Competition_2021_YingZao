@@ -43,8 +43,9 @@ public class ComponentSelect : MonoBehaviour
         //need a list of button info
         //name, image, type of component, 
         List<GameObject> objs = new List<GameObject>();
-        for (int i = 0; i < componentNameSet.Count; i++)
+        while(componentNameSet.Count > 0)
         {
+            int i = Random.Range(0, componentNameSet.Count-1);
             GameObject gameObj = Instantiate(componentPrefab, gameObject.transform, false);
             Image img = gameObj.GetComponentInChildren<Image>();
             TextMeshProUGUI text = gameObj.GetComponentInChildren<TextMeshProUGUI>();
@@ -60,6 +61,7 @@ public class ComponentSelect : MonoBehaviour
             b.onClick.AddListener(() => { BuildingScript.GetInstance().SpawnComponent(s); });
 
             objs.Add(gameObj);
+            componentNameSet.RemoveAt(i);
         }
 
         yield return new WaitForSeconds(0.2f);

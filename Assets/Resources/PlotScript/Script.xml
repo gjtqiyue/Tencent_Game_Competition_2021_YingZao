@@ -1,31 +1,50 @@
 <Root>
-	<Scenario name="Intro">
+	<Scenario name="Intro" isLoop="True">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-900, -115</From>
-				<To>-900, 0</To>
-				<Time>0.5</Time>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
 			</Transform>
 			<Animation name="Greetings" delay="0"/>
 		</Figure>
-		<Line name="main">Hello world!</Line>
-		<Line name="main">fdsfdsf dsfsdfsdfs dfsdfsdfsf</Line>
-		<Line name="main">dfsdfsdsss   dfsdfsdfsf gggggggggggggggggggggggg</Line>
-		<Line name="main">Goodbye</Line>
+		<Line name="main">你好</Line>
+		<Figure target="npc1" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>335, -1067</From>
+				<To>335, -106</To>
+				<Time>1</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
+		<Line name="npc1">你好</Line>
+		<Line name="main">我是一名工匠</Line>
+		<Line name="npc1">幸会幸会</Line>
+		<Line name="main">再见</Line>
+		<Line name="npc1">再见</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-900, 0</From>
-				<To>-900, -115</To>
-				<Time>0.5</Time>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>1</Time>
 			</Transform>
 			<Animation name="Greetings" delay="0"/>
 		</Figure>
-		<GoTo>Tutorial</GoTo>
+		<Figure target="npc1" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>335, -106</From>
+				<To>335, -1067</To>
+				<Time>1</Time>
+			</Transform>
+			<Animation name="Greetings" delay="0"/>
+		</Figure>
 	</Scenario>
 
-	<Scenario name="Tutorial">
+	<Scenario name="Tutorial" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>

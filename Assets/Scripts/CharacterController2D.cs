@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.Experimental.U2D.Animation;
 using UnityEngine.InputSystem;
 
-public enum GroundType
-{
-    None,
-    Soft,
-    Hard
-}
+//public enum GroundType
+//{
+//    None,
+//    Soft,
+//    Hard
+//}
 
 public class CharacterController2D : BaseControlUnit
 {

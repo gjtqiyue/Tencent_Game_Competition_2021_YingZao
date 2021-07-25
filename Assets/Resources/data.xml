@@ -2,36 +2,405 @@
 
 <ConstructionData>
 	<Blueprints>
-		<Blueprint Name="地基">
+		<Blueprint Name="基层" ComponentList="0,1,2,3,4,5,6,7,8,9,10,11">
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="木头" Info="这木头是用来干嘛的">
+						<Component Name="地基">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-4</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-								<ComponentTransformInfo>
-									<PX>-3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.002915874</PX>
+									<PY>0.07512007</PY>
+									<PZ>-0.007888055</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
 							</TransformInfo>
 						</Component>
-						<Component Name="圆柱">
+					</Components>
+				</ConstructionOrder>
+				<!--1地基-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="外圆柱">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-2</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.0006699518</PX>
+									<PY>0.07841</PY>
+									<PZ>0.008078838</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.003621163</PX>
+									<PY>0.07841</PY>
+									<PZ>0.007827008</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.006377644</PX>
+									<PY>0.07841</PY>
+									<PZ>0.005109228</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.009333177</PX>
+									<PY>0.07841</PY>
+									<PZ>0.002153702</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01233401</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.001390543</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01233401</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.005542716</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01233401</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.009722461</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01208217</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01401358</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.009265456</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01663874</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.006309933</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01959427</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.003452257</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.02236478</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.0006999162</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.02236478</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.004879661</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.02236478</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.009170776</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.02211295</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01216799</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01930509</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01512352</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01634956</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01806863</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01329001</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01806863</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.00913784</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01806863</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.004958095</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.0178168</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.0006669806</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01495055</PX>
+									<PY>0.07841</PY>
+									<PZ>0.002121064</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01199501</PX>
+									<PY>0.07841</PY>
+									<PZ>0.00507659</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.009001871</PX>
+									<PY>0.07841</PY>
+									<PZ>0.008078838</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.004849697</PX>
+									<PY>0.07841</PY>
+									<PZ>0.008078838</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+						<Component Name="中圆柱">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01388026</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.002519817</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.00745436</PX>
+									<PY>0.07841</PY>
+									<PZ>0.003849152</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.00184632</PX>
+									<PY>0.07841</PY>
+									<PZ>0.003849152</PZ>
+									<RX>0</RX>
+									<RY>-90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.00831122</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.002750826</PZ>
+									<RX>0</RX>
+									<RY>-135</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.008181749</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01181385</PZ>
+									<RX>0</RX>
+									<RY>180</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.00184632</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01822839</PZ>
+									<RX>0</RX>
+									<RY>135</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.00745436</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01822839</PZ>
+									<RX>0</RX>
+									<RY>90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01388026</PX>
+									<PY>0.07841</PY>
+									<PZ>-0.01171027</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+						<Component Name="内圆柱">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002912179</PX>
+									<PY>0.08990516</PY>
+									<PZ>-0.007181834</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+
+					</Components>
+				</ConstructionOrder>
+				<!--2圆柱-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="雀替">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002783313</PX>
+									<PY>0.08018379</PY>
+									<PZ>-0.007162578</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>
+				<!--3雀替-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="下横梁">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002757392</PX>
+									<PY>0.0808654</PY>
+									<PZ>0.008041969</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.008076862</PX>
+									<PY>0.0808654</PY>
+									<PZ>0.003507505</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01236909</PX>
+									<PY>0.0808654</PY>
+									<PZ>-0.007280008</PZ>
+									<RX>0</RX>
+									<RY>-90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.008119415</PX>
+									<PY>0.0808654</PY>
+									<PZ>-0.01788413</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002757392</PX>
+									<PY>0.0808654</PY>
+									<PZ>-0.02237606</PZ>
+									<RX>0</RX>
+									<RY>180</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01347292</PX>
+									<PY>0.0808654</PY>
+									<PZ>-0.01804227</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.0180209</PX>
+									<PY>0.0808654</PY>
+									<PZ>-0.007280008</PZ>
+									<RX>0</RX>
+									<RY>90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01359161</PX>
+									<PY>0.0808654</PY>
+									<PZ>0.003507521</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>
+				<!--4下横梁-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="斗拱">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002867311</PX>
+									<PY>0.08167062</PY>
+									<PZ>-0.007200903</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
 									<RZ>0</RZ>
@@ -41,33 +410,91 @@
 						<Component Name="墙面">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.00277476</PX>
+									<PY>0.08059928</PY>
+									<PZ>-0.007186714</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
-							</TransformInfo>a
+							</TransformInfo>
 						</Component>
-					</Components>
-				</ConstructionOrder>
-				<ConstructionOrder>
-					<Components>
-						<Component Name="木头">
+						<Component Name="梁">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-4</PX>
-									<PY>1</PY>
-									<PZ>0</PZ>
+									<PX>0.0006508455</PX>
+									<PY>0.08027489</PY>
+									<PZ>0.006087472</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
-									<RZ>45</RZ>
+									<RZ>0</RZ>
 								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-3</PX>
-									<PY>1</PY>
-									<PZ>0</PZ>
+									<PX>-0.007911331</PX>
+									<PY>0.08022325</PY>
+									<PZ>0.0007530896</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01033823</PX>
+									<PY>0.08027489</PY>
+									<PZ>-0.009707442</PZ>
+									<RX>0</RX>
+									<RY>-90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.004909325</PX>
+									<PY>0.08027489</PY>
+									<PZ>-0.01817242</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.004864641</PX>
+									<PY>0.08027489</PY>
+									<PZ>-0.02036899</PZ>
+									<RX>0</RX>
+									<RY>180</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01370166</PX>
+									<PY>0.08027489</PY>
+									<PZ>-0.01494894</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01607283</PX>
+									<PY>0.08027489</PY>
+									<PZ>-0.004973107</PZ>
+									<RX>0</RX>
+									<RY>90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.0105944</PX>
+									<PY>0.08027489</PY>
+									<PZ>0.003654743</PZ>
 									<RX>0</RX>
 									<RY>45</RY>
 									<RZ>0</RZ>
@@ -76,76 +503,128 @@
 						</Component>
 					</Components>
 				</ConstructionOrder>
+				<!--5斗拱+梁+墙-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="上横梁">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002757392</PX>
+									<PY>0.08215483</PY>
+									<PZ>0.008041969</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.008076862</PX>
+									<PY>0.08215483</PY>
+									<PZ>0.003507505</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.01236909</PX>
+									<PY>0.08215483</PY>
+									<PZ>-0.007280008</PZ>
+									<RX>0</RX>
+									<RY>-90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>-0.008119415</PX>
+									<PY>0.08215483</PY>
+									<PZ>-0.01788413</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002757392</PX>
+									<PY>0.08215483</PY>
+									<PZ>-0.02237606</PZ>
+									<RX>0</RX>
+									<RY>180</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01347292</PX>
+									<PY>0.08215483</PY>
+									<PZ>-0.01804227</PZ>
+									<RX>0</RX>
+									<RY>-45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.0180209</PX>
+									<PY>0.08215483</PY>
+									<PZ>-0.007280008</PZ>
+									<RX>0</RX>
+									<RY>90</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.01359161</PX>
+									<PY>0.08215483</PY>
+									<PZ>0.003507521</PZ>
+									<RX>0</RX>
+									<RY>45</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>
+				<!--6上横梁-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="围合结构">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.00277479</PX>
+									<PY>0.08363286</PY>
+									<PZ>-0.007186713</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>
+				<!--7围合结构（楼板）-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="房瓦" Info="房顶科普内容" Img="">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002774745</PX>
+									<PY>0.08410785</PY>
+									<PZ>-0.007186737</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>	 
+				<!--8房顶-->
 			</ConstructionOrders>
 		</Blueprint>
-		<Blueprint Name="主体">
+		<Blueprint Name="二层" ComponentList="12">
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="木头">
+						<Component Name="二层">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-4</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.002906219</PX>
+									<PY>0.09030007</PY>
+									<PZ>-0.007186738</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-								<ComponentTransformInfo>
-									<PX>-3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-						</Component>
-						<Component Name="圆柱">
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>-2</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-						</Component>
-						<Component Name="墙面">
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>a
-						</Component>
-					</Components>
-				</ConstructionOrder>
-				<ConstructionOrder>
-					<Components>
-						<Component Name="木头">
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>-4</PX>
-									<PY>1</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>45</RZ>
-								</ComponentTransformInfo>
-								<ComponentTransformInfo>
-									<PX>-3</PX>
-									<PY>1</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>45</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
 							</TransformInfo>
@@ -154,53 +633,41 @@
 				</ConstructionOrder>
 			</ConstructionOrders>
 		</Blueprint >
-		<Blueprint Name="房顶">
+		<Blueprint Name="三层" ComponentList="13">
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="木头">
+						<Component Name="三层">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-4</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-								<ComponentTransformInfo>
-									<PX>-3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.00290622</PX>
+									<PY>0.09913568</PY>
+									<PZ>-0.007186738</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
 							</TransformInfo>
 						</Component>
-						<Component Name="圆柱">
+					</Components>
+				</ConstructionOrder>
+			</ConstructionOrders>
+		</Blueprint>
+		<Blueprint Name="四层" ComponentList="14">
+			<ConstructionOrders>
+				<ConstructionOrder>
+					<Components>
+						<Component Name="四层">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>-2</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
+									<PX>0.002906219</PX>
+									<PY>0.1027679</PY>
+									<PZ>-0.007186738</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
 							</TransformInfo>
-						</Component>
-						<Component Name="墙面">
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>3</PX>
-									<PY>0</PY>
-									<PZ>0</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>a
 						</Component>
 					</Components>
 				</ConstructionOrder>

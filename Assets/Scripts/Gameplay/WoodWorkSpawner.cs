@@ -10,6 +10,8 @@ public class WoodWorkSpawner : BaseControlUnit
     public Vector3 spawningPoint;
 
     [SerializeField]
+    int numberOfLumber = 1;
+    [SerializeField]
     float transportSpeed = 1;
     [SerializeField]
     float cutPointSpawnWait = 0.2f;
@@ -19,14 +21,19 @@ public class WoodWorkSpawner : BaseControlUnit
     float deletePoint;  //relatively to the spawning point on x axis
     [SerializeField]
     float passThreshold = 0.8f;
+    [SerializeField]
+    float cutLineChangeProbability = 0.2f;
+    [SerializeField]
+    float cutLineTransitionStep = 0.1f;
 
     private GameObject spawnedWood;
     private int lumberCutCount = 0;
     private int cutPointSpawned;
+    private float currentCutPoint;
 
     private void Start()
     {
-        StartWoodWork(1);
+        StartWoodWork(numberOfLumber);
     }
 
     private void FixedUpdate()
@@ -44,7 +51,7 @@ public class WoodWorkSpawner : BaseControlUnit
 
     IEnumerator WoodCutting(int numberOfLumber)
     {
-        while (lumberCutCount <= numberOfLumber)
+        while (lumberCutCount < numberOfLumber)
         {
             spawnedWood = Instantiate(woodPrefab, spawningPoint, Quaternion.identity, gameObject.transform);
             Vector3 upperRightBound = spawnedWood.transform.Find("UpperRightBound").position;
@@ -55,18 +62,44 @@ public class WoodWorkSpawner : BaseControlUnit
             // wait until it passes the visible point
             // then we start to spawn cut point for user to cut
             // until it reaches the deletion point
+            bool inTransition = false;
+            float transitionStep = 0;
+            float nextPoint = 0;
+            woodCutter.BeginWoodCut();
             while (spawnedWood.transform.position.x - spawningPoint.x < deletePoint)
             {
                 float distance = spawnedWood.transform.position.x - spawningPoint.x;
                 if (distance > visiblePoint && (distance - visiblePoint) < horizontalRange)
                 {
                     //start spawning a cut point at visible point
-                    float yPos = Random.Range(-verticalRange, verticalRange);
+                    float yPos = 0;
+                    if (distance - visiblePoint < Mathf.Epsilon) currentCutPoint = Random.Range(-verticalRange, verticalRange);
+                    if (Random.Range(0f, 1f) < cutLineChangeProbability && !inTransition)
+                    {
+                        //change plot
+                        inTransition = true;
+                        nextPoint = Random.Range(-verticalRange, verticalRange);
+                    }
+                    if (inTransition)
+                    {
+                        yPos = Mathf.Lerp(currentCutPoint, nextPoint, transitionStep);
+                        transitionStep += cutLineTransitionStep;
+                        if (transitionStep > 1)
+                        {
+                            inTransition = false;
+                            currentCutPoint = nextPoint;
+                            transitionStep = 0;
+                        }
+                    }
+                    else
+                    {
+                        yPos = currentCutPoint;
+                    }
 
                     //the pivot point is at the right middle point of the wood
                     Instantiate(woodCutPointPrefab, new Vector3(spawnedWood.transform.position.x - Mathf.Clamp(distance - visiblePoint, 0, horizontalRange), yPos, 0), Quaternion.identity, spawnedWood.transform);
                     cutPointSpawned += 1;
-                    woodCutter.BeginWoodCut();
+                    
 
                     yield return new WaitForSeconds(cutPointSpawnWait);
                 }
@@ -83,6 +116,7 @@ public class WoodWorkSpawner : BaseControlUnit
             {
                 lumberCutCount += 1;//this value should be monitored by the UI
             }
+            cutPointSpawned = 0;
         }
     }
 }

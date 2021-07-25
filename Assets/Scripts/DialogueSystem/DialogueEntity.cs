@@ -29,28 +29,34 @@ public class Scenario : DialogueActivity
 {
     //list of things to play in the scenario
     //follows order in the xml file
-    Queue<DialogueActivity> data = new Queue<DialogueActivity>();
+    List<DialogueActivity> data = new List<DialogueActivity>();
     public string name;
     public string next;
+    public bool isLoop;
+    private int idx;
 
-    public Scenario(string n) { name = n; }
+    public Scenario(string n, bool l) { name = n; isLoop = l; }
 
     public void AddEvent(DialogueActivity d)
     {
-        data.Enqueue(d);
+        data.Add(d);
     }
 
     public override void Play()
     {
-        if (data.Count > 0)
+        if (data.Count > 0 && idx < data.Count)
         {
             base.Play();
-            data.Peek().Play();
-            data.Dequeue();
+            data[idx].Play();
+            idx++;
         }
     }
 
-    public bool Finished() { return data.Count == 0; }
+    public void Reset() { idx = 0; }
+
+    public bool Finished() {
+        return idx >= data.Count;
+    }
 }
 public class Figure : DialogueActivity
 {
