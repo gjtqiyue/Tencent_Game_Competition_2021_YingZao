@@ -61,3 +61,9 @@ TagManager:
   - name: Near Foreground
     uniqueID: 2727812175
     locked: 0
+  - name: MiniGame
+    uniqueID: 970791515
+    locked: 0
+  - name: Dialogue
+    uniqueID: 3217751575
+    locked: 0

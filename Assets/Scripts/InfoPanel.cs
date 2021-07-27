@@ -15,20 +15,26 @@ public class InfoPanel : MonoBehaviour
     public TextMeshProUGUI text;
     public Image spriteRenderer;
 
-    private void Start()
+    private RectTransform rectTransform;
+
+    private void Awake()
     {
-        endX = transform.position.x;
+        rectTransform = GetComponent<RectTransform>();
+        endX = rectTransform.position.x;
+        rectTransform.position = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
-        transform.position = new Vector3(endX - fadeDistance, transform.position.y, transform.position.z);
-        LeanTween.move(this.gameObject, new Vector3(endX, transform.position.y, transform.position.z), fadeSpeed);
+        rectTransform.position = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
+        LeanTween.move(this.gameObject, new Vector3(endX, rectTransform.position.y, rectTransform.position.z), fadeSpeed);
     }
 
     public void Disable()
     {
-        LeanTween.move(this.gameObject, new Vector3(endX, transform.position.y, transform.position.z), fadeSpeed).setOnComplete(()=> { gameObject.SetActive(false); });
+        Vector3 pos = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
+        LeanTween.move(this.gameObject, pos, fadeSpeed).setOnComplete(()=> { gameObject.SetActive(false); });
     }
 
     public void UpdateInfo(string info, string img)

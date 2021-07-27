@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WoodWorkSpawner : BaseControlUnit
 {
+    [Header("Data")]
     public GameObject woodPrefab;
     public GameObject woodCutPointPrefab;
-    public WoodWorkController woodCutter;
+    public WoodWorkCutter woodCutter;
     public Vector3 spawningPoint;
 
     [SerializeField]
@@ -26,14 +28,35 @@ public class WoodWorkSpawner : BaseControlUnit
     [SerializeField]
     float cutLineTransitionStep = 0.1f;
 
+    [Header("UI")]
+    public TextMeshProUGUI taskUI;
+    public TextMeshProUGUI scoreUI;
+    
+
     private GameObject spawnedWood;
     private int lumberCutCount = 0;
     private int cutPointSpawned;
     private float currentCutPoint;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartWoodWork(numberOfLumber);
+        //init all game data
+        SetUIActive(false);
+        woodCutter.gameObject.SetActive(false);
+        StartCoroutine(WoodWorkMain(numberOfLumber));
+    }
+
+    private void OnDisable()
+    {
+        lumberCutCount = 0;
+        cutPointSpawned = 0;
+        StopCoroutine(WoodWorkMain(numberOfLumber));
+    }
+
+    private void SetUIActive(bool active)
+    {
+        taskUI.gameObject.SetActive(active);
+        scoreUI.gameObject.SetActive(active);
     }
 
     private void FixedUpdate()
@@ -44,15 +67,19 @@ public class WoodWorkSpawner : BaseControlUnit
         }
     }
 
-    public void StartWoodWork(int numberOfLumber)
+    IEnumerator WoodWorkMain(int numberOfLumber)
     {
-        StartCoroutine(WoodCutting(numberOfLumber));
-    }
+        //Intro scenario
+        DialogueManager.GetInstance().TriggerScenario("WoodWorkGameIntro");
+        yield return new WaitUntil(DialogueManager.GetInstance().Finished);
 
-    IEnumerator WoodCutting(int numberOfLumber)
-    {
+        yield return new WaitForSeconds(1f);
+        SetUIActive(true);
+        taskUI.text = "完成度: " + ((float)lumberCutCount / numberOfLumber);
+
         while (lumberCutCount < numberOfLumber)
         {
+            woodCutter.gameObject.SetActive(true);
             spawnedWood = Instantiate(woodPrefab, spawningPoint, Quaternion.identity, gameObject.transform);
             Vector3 upperRightBound = spawnedWood.transform.Find("UpperRightBound").position;
             Vector3 bottomLeftBound = spawnedWood.transform.Find("BottomLeftBound").position;
@@ -73,12 +100,12 @@ public class WoodWorkSpawner : BaseControlUnit
                 {
                     //start spawning a cut point at visible point
                     float yPos = 0;
-                    if (distance - visiblePoint < Mathf.Epsilon) currentCutPoint = Random.Range(-verticalRange, verticalRange);
+                    if (distance - visiblePoint < Mathf.Epsilon) currentCutPoint = spawningPoint.y + Random.Range(-verticalRange, verticalRange);
                     if (Random.Range(0f, 1f) < cutLineChangeProbability && !inTransition)
                     {
-                        //change plot
+                        //change plot, sample a new point
                         inTransition = true;
-                        nextPoint = Random.Range(-verticalRange, verticalRange);
+                        nextPoint = spawningPoint.y + Random.Range(-verticalRange, verticalRange);
                     }
                     if (inTransition)
                     {
@@ -97,9 +124,8 @@ public class WoodWorkSpawner : BaseControlUnit
                     }
 
                     //the pivot point is at the right middle point of the wood
-                    Instantiate(woodCutPointPrefab, new Vector3(spawnedWood.transform.position.x - Mathf.Clamp(distance - visiblePoint, 0, horizontalRange), yPos, 0), Quaternion.identity, spawnedWood.transform);
+                    Instantiate(woodCutPointPrefab, new Vector3(spawnedWood.transform.position.x - Mathf.Clamp(distance - visiblePoint, spawningPoint.y, horizontalRange), yPos, 0), Quaternion.identity, spawnedWood.transform);
                     cutPointSpawned += 1;
-                    
 
                     yield return new WaitForSeconds(cutPointSpawnWait);
                 }
@@ -111,12 +137,30 @@ public class WoodWorkSpawner : BaseControlUnit
 
             Destroy(spawnedWood);
             float pass = woodCutter.FinishWoodCut(cutPointSpawned);
-            Debug.Log("goal is" + cutPointSpawned + " , pass grade is " + pass);
             if (pass > passThreshold)
             {
                 lumberCutCount += 1;//this value should be monitored by the UI
             }
+            yield return new WaitForSeconds(2);
             cutPointSpawned = 0;
         }
+
+        SetUIActive(false);
+
+        //Exit scenario
+        DialogueManager.GetInstance().TriggerScenario("WoodWorkGameExit");
+        yield return new WaitUntil(DialogueManager.GetInstance().Finished);
+
+        //Hide panel
+        gameObject.SetActive(false);
+        gameMgr.SetGameState(GameProgressState.木作, true);
+    }
+
+    private void Update()
+    {
+        //update score
+        float acc = ((float)woodCutter.GetCurrentCount() / cutPointSpawned) * 100;
+        scoreUI.text = "准确度: " + (float.IsNaN(acc)?"0.00": acc.ToString("F2")) + "%";
+        taskUI.text = "完成度: " + ((float)lumberCutCount + " / " + numberOfLumber);
     }
 }

@@ -26,7 +26,7 @@ public class XMLParser
                         XAttribute name = activity.Attribute("type");
                         XElement side = activity.Element("ScreenPosition");
                         XElement transform = activity.Element("Transform");
-                        XElement anim = activity.Element("Animation");
+                        XElement image = activity.Element("Image");
                         if (transform != null)
                         {
                             XElement fromE = transform.Element("From");
@@ -41,7 +41,7 @@ public class XMLParser
                             target.Value,
                             side == null ? "left" : side.Value,
                             from, to, time,
-                            anim == null ? "" : anim.Attribute("name").Value
+                            image == null ? "" : image.Attribute("name").Value
                         );
                         //Debug.Log(f.ToString());
                         ss.AddEvent(f);

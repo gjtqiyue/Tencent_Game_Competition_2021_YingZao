@@ -42,7 +42,7 @@ public class SceneLoading : MonoBehaviour
 
     public void UpdateLoadingProgress(float n)
     {
-        loadingProgress.text = "Loading ... " + (n * 100).ToString() + "%";
+        //loadingProgress.text = (n * 100).ToString() + "%";
     }
 
     void UpdateAlpha(float value)

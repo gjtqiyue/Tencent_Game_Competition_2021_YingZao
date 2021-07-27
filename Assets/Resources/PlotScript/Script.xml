@@ -7,7 +7,7 @@
 				<To>-493, -343</To>
 				<Time>1</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
 		</Figure>
 		<Line name="main">你好</Line>
 		<Figure target="npc1" type="entrance">
@@ -17,7 +17,7 @@
 				<To>335, -106</To>
 				<Time>1</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
 		</Figure>
 		<Line name="npc1">你好</Line>
 		<Line name="main">我是一名工匠</Line>
@@ -31,7 +31,7 @@
 				<To>-493, -1067</To>
 				<Time>1</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
 		</Figure>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
@@ -40,32 +40,702 @@
 				<To>335, -1067</To>
 				<Time>1</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
 		</Figure>
 	</Scenario>
 
-	<Scenario name="Tutorial" isLoop="False">
+	<Scenario name="BuildingIntro" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>900, -115</From>
-				<To>900, 0</To>
-				<Time>0.5</Time>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
 		</Figure>
-		<Line name="main">Hello it's me again</Line>
-		<Line name="main">damnfdsfd dddddd</Line>
-		<Line name="main">dfsdfsdsss   dfsdfsdfsf gggggggggggggggggggggggg</Line>
-		<Line name="main">Goodbye</Line>
+		<Line name="main">终于是时候开始施工了</Line>
+		<Line name="main">要完成搭建，我需要从基层开始，进行每一层的搭建</Line>
+		<Line name="main">每一步的步骤是经过层层考量的，所以顺序很重要，我需要观看图纸避免错误的搭建</Line>
+		<Line name="main">选择需要的部件来进行搭建，让我们来试一试吧</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StartSecond" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>900, 0</From>
-				<To>900, -115</To>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">不错！现在开始第二层吧</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
-			<Animation name="Greetings" delay="0"/>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="FinishSecond" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">第二层完成！</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StartThird" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">第三层开始！</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="FinishThird" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">第三层完工!</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StartFourth" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">第四层，加油！</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="Final" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">完成了！</Line>
+		<Line name="main">但是这不是最后一步，一个建筑的完成还要经过很多善后工序，在这里我就不一一陈列了</Line>
+		<Line name="main">到这一步已经是工程上的一个里程碑了</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<!--2D scenario-->
+	<Scenario name="WoodWorkTalk" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">你好</Line>
+		<Figure target="npc1" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc1">你好</Line>
+		<Line name="main">我需要做木工</Line>
+		<Line name="npc1">请跟我来</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Figure target="npc1" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+	<Scenario name="WoodWorkTalkAfterCompletion" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Figure target="npc1" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc1">你已经完成木作所有的准备工作</Line>
+		<Line name="npc1">完成石作和漆作之后，你就可以着手营造了</Line>
+		<Line name="main">再见</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="npc1">再见</Line>
+		<Figure target="npc1" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StoneWorkTalk" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">你好</Line>
+		<Figure target="npc2" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc2">你好</Line>
+		<Line name="main">我需要做石作</Line>
+		<Line name="npc2">请跟我来</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Figure target="npc2" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+	<Scenario name="StoneWorkTalkAfterCompletion" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Figure target="npc1" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc1">你已经完成石作所有的准备工作</Line>
+		<Line name="npc1">请抓紧完成木作和漆作吧</Line>
+		<Line name="main">再见</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="npc1">再见</Line>
+		<Figure target="npc1" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+	
+	<Scenario name="ColorWorkTalk" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">你好</Line>
+		<Figure target="npc3" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc3">你好</Line>
+		<Line name="main">我需要做漆作</Line>
+		<Line name="npc3">请跟我来</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Figure target="npc3" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+	<Scenario name="ColorWorkTalkAfterCompletion" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Figure target="npc1" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -1067</From>
+				<To>455, -106</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc1">你已经完成漆作所有的准备工作</Line>
+		<Line name="npc1">抓紧时间着手其他的准备工作吧</Line>
+		<Line name="main">再见</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="npc1">再见</Line>
+		<Figure target="npc1" type="exit">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>455, -106</From>
+				<To>455, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+	</Scenario>
+
+	
+	<Scenario name="NotThereYet" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">我还没有做好所有的准备工作</Line>
+		<Line name="main">我需要完成木作，石作和漆作，才可以开始施工</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<!--Gameplay scenario-->
+	<Scenario name="WoodWorkGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">木工指引</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="WoodWorkGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">木工结束</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StoneWorkGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">石作指引</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="StoneWorkGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">石作完成</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">漆作开始</Line>
+	</Scenario>
+
+	<Scenario name="ColorWorkMixGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">调制指引</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkMixGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">调制结束</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkPatternGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">图层指引</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkPatternGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">图层结束</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkPaintGameIntro" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">上漆指引</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkPaintGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -1067</From>
+				<To>-493, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">上漆结束</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ColorWorkGameExit" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+		<Line name="main">漆作结束</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-493, -343</From>
+				<To>-493, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
 		</Figure>
 	</Scenario>
 </Root>

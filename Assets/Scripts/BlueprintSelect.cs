@@ -30,7 +30,7 @@ public class BlueprintSelect : BaseControlUnit
     {
         //trigger building process
         BlueprintType b = (BlueprintType)Enum.Parse(typeof(BlueprintType), t);
-        BuildingScript.GetInstance().TriggerBlueprintConstruction(b);
+        //BuildingScript.GetInstance().TriggerBlueprintConstruction(b);
 
         //fade animation
         FadeOut();

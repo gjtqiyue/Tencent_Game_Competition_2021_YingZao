@@ -30,10 +30,12 @@ public class ComponentSelect : MonoBehaviour
         {
             Destroy(bs[i].gameObject);
         }
+        GetComponent<Image>().enabled = false;
     }
 
     public void PopulateComponentButtons(List<string> componentNameSet, List<Sprite> componentImageSet)
     {
+        GetComponent<Image>().enabled = true;
         StartCoroutine(PopulateComponentButtonsAnimation(componentNameSet, componentImageSet));
     }
 
@@ -70,7 +72,7 @@ public class ComponentSelect : MonoBehaviour
         {
             RectTransform rect = objs[i].GetComponent<RectTransform>();
             Vector3 dist = rect.position;
-            Debug.Log(dist);
+            //Debug.Log(dist);
             rect.position = dist - orientation * moveDistance;
             //objs[i].SetActive(true);
             objs[i].GetComponent<CanvasGroup>().alpha = 1;

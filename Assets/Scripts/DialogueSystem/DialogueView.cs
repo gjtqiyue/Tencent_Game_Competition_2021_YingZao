@@ -16,8 +16,8 @@ public class DialogueView : MonoBehaviour
     private string leftCharacter;
     private string rightCharacter;
 
-    [System.Serializable] public class SceneDictionary : SerializableDictionary<string, Sprite> { };
-    public SceneDictionary characterIconMap;
+    
+    public IconDictionary characterIconMap;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +31,18 @@ public class DialogueView : MonoBehaviour
     {
         DialoguePanel.SetActive(true);
         dialogueText.text = "";
+        leftCharacterSlot.gameObject.SetActive(false);
+        rightCharacterSlot.gameObject.SetActive(false);
     }
 
-    public void FigureTransition(string character, Vector3 from, Vector3 to, float time, string pos)
+    public void FigureTransition(string character, Vector3 from, Vector3 to, float time, string pos, string img)
     {
 
         if (pos == "left")
         {
             leftCharacterSlot.gameObject.SetActive(true);
             leftCharacter = character;
-            leftCharacterSlot.sprite = characterIconMap.Get(character);
+            leftCharacterSlot.sprite = characterIconMap.Get(img);
             RectTransform figureTransform = leftCharacterSlot.rectTransform;
             figureTransform.anchoredPosition = from;
             LeanTween.move(figureTransform, to, time).setOnComplete(() => { dialogueMgr.OnDialogueEventFinish(); });
@@ -49,7 +51,7 @@ public class DialogueView : MonoBehaviour
         {
             rightCharacterSlot.gameObject.SetActive(true);
             rightCharacter = character;
-            rightCharacterSlot.sprite = characterIconMap.Get(character);
+            rightCharacterSlot.sprite = characterIconMap.Get(img);
             RectTransform figureTransform = rightCharacterSlot.rectTransform;
             figureTransform.anchoredPosition = from;
             LeanTween.move(figureTransform, to, time).setOnComplete(() => { dialogueMgr.OnDialogueEventFinish(); });

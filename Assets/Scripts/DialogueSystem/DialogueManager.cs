@@ -42,6 +42,12 @@ public class DialogueManager : BaseControlUnit
 
     public static DialogueManager GetInstance() { return Instance; }
 
+    public bool Finished() 
+    { 
+        if (currentScenario != null) return currentScenario.Finished(); 
+        else return true; 
+    }
+
     private void Start()
     {
         ParsePlotScript();
@@ -60,8 +66,8 @@ public class DialogueManager : BaseControlUnit
 
     public void TriggerScenario(string name)
     {
-        
-        if (!scenarioCollection.ContainsKey(name)) throw new System.Exception("No matching scenario found!");
+
+        if (!scenarioCollection.ContainsKey(name)) return;
         if (currentScenario != null && currentScenario.name == name && currentScenario.isPlaying) return;
 
         //if there is currently something playing, and no global scenario, then register it to the global scenario
@@ -98,7 +104,7 @@ public class DialogueManager : BaseControlUnit
 
     IEnumerator ScenarioCoroutine()
     {
-        while (!currentScenario.Finished())
+        while (currentScenario != null && !currentScenario.Finished())
         {
             currentScenario.Play();
             yield return new WaitUntil(currentScenario.IsDonePlayingCurrentActivity);
@@ -125,7 +131,7 @@ public class DialogueManager : BaseControlUnit
         //determine if it's a NPC or the player
         //npc on the right and mc on the left
         //tell the view to do the transition
-        view.FigureTransition(e.character, e.from, e.to, e.transitionTime, e.screenPosition);
+        view.FigureTransition(e.character, e.from, e.to, e.transitionTime, e.screenPosition, e.imageToShow);
     }
 
     public void TriggerQuestion(Question q)
@@ -154,7 +160,7 @@ public class DialogueManager : BaseControlUnit
 
             if (allowSkip)
             {
-                if (skipTrigger && Keyboard.current.fKey.isPressed)
+                if (skipTrigger && Keyboard.current.fKey.isPressed && inputEnabled)
                 {
                     //print the whole string
                     view.UpdateLineView(character, text);

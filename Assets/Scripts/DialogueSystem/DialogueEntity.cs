@@ -20,7 +20,12 @@ public abstract class DialogueActivity
         dialogueMgr.dialogueEventFinishedDelegate += FinishEvent;
     }
 
-    public virtual void FinishEvent() { isPlaying = false; dialogueMgr.dialogueEventFinishedDelegate -= FinishEvent; }
+    public virtual void FinishEvent() 
+    {
+        dialogueMgr.dialogueEventFinishedDelegate -= FinishEvent;
+        isPlaying = false; 
+        
+    }
 
     public bool IsDonePlayingCurrentActivity() { return !isPlaying; }
 }
@@ -55,7 +60,7 @@ public class Scenario : DialogueActivity
     public void Reset() { idx = 0; }
 
     public bool Finished() {
-        return idx >= data.Count;
+        return !isPlaying && idx >= data.Count;
     }
 }
 public class Figure : DialogueActivity
@@ -65,7 +70,7 @@ public class Figure : DialogueActivity
     public Vector2 from;
     public Vector2 to;
     public float transitionTime;
-    public string animationToPlay;
+    public string imageToShow;
 
     public Figure(string c, string s, Vector2 f, Vector2 t, float time, string a)
     {
@@ -74,7 +79,7 @@ public class Figure : DialogueActivity
         from = f;
         to = t;
         transitionTime = time;
-        animationToPlay = a;
+        imageToShow = a;
     }
     public override void Play()
     {
@@ -84,7 +89,7 @@ public class Figure : DialogueActivity
 
     public override string ToString()
     {
-        return string.Format("Figure: [character : {0}, position : {1}, from : {2}, to : {3}, time : {4}, anim : {5}]", character, screenPosition, from.ToString(), to.ToString(), transitionTime, animationToPlay);
+        return string.Format("Figure: [character : {0}, position : {1}, from : {2}, to : {3}, time : {4}, anim : {5}]", character, screenPosition, from.ToString(), to.ToString(), transitionTime, imageToShow);
     }
 }
 
@@ -110,7 +115,6 @@ public class Line : DialogueActivity
     public override void Play()
     {
         base.Play();
-        
         dialogueMgr.TriggerLine(this);
     }
 

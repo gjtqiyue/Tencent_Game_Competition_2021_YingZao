@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using System;
 using TMPro;
 
-public enum GameState
-{
-    InMenu,
-    StartGame,
-    InGame,
-    FinishGame
-};
 
 [System.Serializable]
 public class GameManager : MonoBehaviour
 {
     private static GameManager Instance;
 
+    private bool isLoading;
 
     /* delegate definition */
     public delegate void OnGamePauseDelegate();
@@ -34,14 +29,11 @@ public class GameManager : MonoBehaviour
     public event OnGameStartDelegate gameStartDelegate;
     public event OnGameEndDelegate gameEndDelegate;
 
+    public PauseMenu pauseMenu;
+
     [SerializeField]
     private GameState gameState = GameState.InMenu;
-    [SerializeField]
-    private bool isGameLoading = false;
-    [SerializeField]
-    private bool isGamePaused = false;
-
-    public PauseMenu pauseMenu;
+    private Dictionary<GameProgressState, bool> gameProgress;
 
     public static GameManager GetInstance()
     {
@@ -56,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Object.Destroy(Instance.gameObject);
+            Destroy(Instance.gameObject);
             Instance = this;
         }
 
@@ -84,7 +76,7 @@ public class GameManager : MonoBehaviour
         ChangeScene();
     }
 
-    private void GameInit()
+    private void GameSetUp()
     {
         Debug.Log("[" + Time.time + "]" + " Start game initialization...");
         pauseMenu.gameObject.SetActive(true);
@@ -92,15 +84,23 @@ public class GameManager : MonoBehaviour
         gameStartDelegate?.Invoke();
         gameState = GameState.InGame;
 
+        gameProgress = new Dictionary<GameProgressState, bool>();
+        //setup game progress tracker
+        foreach (GameProgressState state in Enum.GetValues(typeof(GameProgressState)))
+        {
+            gameProgress.Add(state, false);
+        }
+
         Debug.Log("[" + Time.time + "]" + " Game initialization done");
     }
 
-    public void EndGame()
+    public void FinishGame()
     {
         Debug.Log("[" + Time.time + "]" + " Ending game ...");
-        gameState = GameState.FinishGame;
+        gameState = GameState.FinishedGame;
         StopCoroutine(GamePauseCheck());
         gameEndDelegate?.Invoke();
+        gameProgress.Clear();
         ChangeToMenuScene();
     }
 
@@ -116,12 +116,12 @@ public class GameManager : MonoBehaviour
 
     public bool IsGameLoading()
     {
-        return isGameLoading;
+        return isLoading;
     }
 
     /* Scene Management */
     public SceneLoading loadingScreen;
-    [System.Serializable] public class SceneDictionary : SerializableDictionary<string, string> { };
+
     public SceneDictionary sceneMap;
     
     
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeToMenuScene()
     {
-        isGameLoading = true;
+        isLoading = true;
         gameStartLoadingDelegate?.Invoke();
         //start async operation
         StartCoroutine(LoadAsyncOperation("Menu"));
@@ -145,8 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene()
     {
-        
-        isGameLoading = true;
+        isLoading = true;
         gameStartLoadingDelegate?.Invoke();
 
         Scene scene = SceneManager.GetActiveScene();
@@ -167,10 +166,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        if (gameState == GameState.StartGame) GameInit();
+        if (gameState == GameState.StartGame) GameSetUp();
 
+        isLoading = false;
         gameFinishLoadingDelegate?.Invoke();
-        isGameLoading = false;
+        //update state
+        if (sceneToLoad == "Menu") gameState = GameState.InMenu;
+        else gameState = GameState.InGame;
         Debug.Log("[" + Time.time + "]" + " Finish loading " + sceneToLoad);
     }
 
@@ -179,8 +181,8 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            if (isGameLoading) yield return new WaitForEndOfFrame();
-            if (Keyboard.current.escapeKey.isPressed)
+            if (isLoading || gameState == GameState.InMenu) yield return new WaitForEndOfFrame();
+            else if (Keyboard.current.escapeKey.isPressed)
             {
                 PauseGame();
                 yield return new WaitForEndOfFrame();
@@ -191,10 +193,11 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        if (isGamePaused) return;
+        if (gameState == GameState.Paused) return;
+        
         Debug.Log("[" + Time.time + "]" + " Pause Game");
         gamePauseDelegate?.Invoke();
-        isGamePaused = true;
+        gameState = GameState.Paused;
     }
 
     public void PauseGameCallback()
@@ -204,15 +207,33 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (!isGamePaused) return;
+        if (gameState != GameState.Paused) return;
         Debug.Log("[" + Time.time + "]" + " Resume Game");
         Time.timeScale = 1;
         gameResumeDelegate?.Invoke();
-        isGamePaused = false;
+        gameState = GameState.InGame;
     }
 
     public GameObject GetPlayer()
     {
         return GameObject.FindGameObjectWithTag("Player");
+    }
+
+    
+    public void SetGameState(GameProgressState progressState, bool state)
+    {
+        gameProgress[progressState] = state;
+    }
+
+    public Dictionary<GameProgressState, bool> GetGameProgress()
+    {
+        return gameProgress;
+    }
+
+    public void PlayMiniWorkGame(GameProgressState workType)
+    {
+        GameObject gamePlayPrefab = Resources.Load<GameObject>("Prefabs/Gameplay/" + Enum.GetName(typeof(GameProgressState), workType));
+        Instantiate(gamePlayPrefab).SetActive(true);
+        
     }
 }
