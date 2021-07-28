@@ -60,7 +60,7 @@ public class DialogueManager : BaseControlUnit
 
     private void ParsePlotScript()
     {
-        string dialogueFilePath = Path.Combine(Application.dataPath, "PlotScript/Script.xml");
+        string dialogueFilePath = "PlotScript/Script";
         dialogueParser.ParseDialogueScript(this, dialogueFilePath);
     }
 

@@ -76,8 +76,8 @@ public class BuildingScript : BaseControlUnit
         blueprintImage.gameObject.SetActive(false);
 
         mainParent = GameObject.Find("main building").transform;
-        data = ConstructionData.Load(Path.Combine(Application.dataPath, "Resources/data.xml"));
-        prefabTable = ComponentPrefabTable.Load(Path.Combine(Application.dataPath, "Resources/componentPrefabTable.xml"));
+        data = ConstructionData.LoadFromText(Resources.Load<TextAsset>("data").text);
+        prefabTable = ComponentPrefabTable.LoadFromText(Resources.Load<TextAsset>("componentPrefabTable").text);
         blueprintButton.SetActive(false);
 
         buildTotal = Enum.GetValues(typeof(BlueprintType)).Length;
@@ -125,6 +125,7 @@ public class BuildingScript : BaseControlUnit
 
     IEnumerator ConstructionMain()
     {
+        yield return new WaitForSeconds(0.5f);
         while (buildProgress < buildTotal)
         {
             BlueprintType t = (BlueprintType)Enum.GetValues(typeof(BlueprintType)).GetValue(buildProgress);
@@ -317,7 +318,7 @@ public class BuildingScript : BaseControlUnit
     void ShowInfoPanel(string info, string img)
     {
         if (infoPanel.activeSelf) return;
-        if (info == "") return;
+        if (info == null) return;
         infoPanel.SetActive(true);
         infoPanel.GetComponent<InfoPanel>().UpdateInfo(info, img);
     }

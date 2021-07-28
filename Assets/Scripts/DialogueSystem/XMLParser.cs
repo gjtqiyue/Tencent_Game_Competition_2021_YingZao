@@ -9,7 +9,7 @@ public class XMLParser
 {
     public void ParseDialogueScript(DialogueManager dialogueManager, string path)
     {
-        string text = Resources.Load<TextAsset>("PlotScript/Script").text;
+        string text = Resources.Load<TextAsset>(path).text;
         XElement xmlDoc = XElement.Parse(text);
         foreach (XElement scenario in xmlDoc.Elements("Scenario"))
         {

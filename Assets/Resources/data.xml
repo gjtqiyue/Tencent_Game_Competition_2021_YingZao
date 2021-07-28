@@ -305,23 +305,6 @@
 				<!--2圆柱-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="雀替" Info="雀替，原是放在柱子上端用来与柱子共同承受上部压力的物件，他的具体位置在梁与柱或枋与柱的交接处，它除了具有一定的承重作用外，还可以减少梁，枋的跨距或是增加梁头的抗剪能力。" Img="雀替">
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>0.002783313</PX>
-									<PY>0.08018379</PY>
-									<PZ>-0.007162578</PZ>
-									<RX>0</RX>
-									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-						</Component>
-					</Components>
-				</ConstructionOrder>
-				<!--3雀替-->
-				<ConstructionOrder>
-					<Components>
 						<Component Name="额枋" Info="额枋，安装在檐柱上，是两檐柱之间的连接构件，同时又承担着檐步的一部分荷载，也是压弯构件。在比较大的殿宇中，往往做两层额枋。上层称为“大额枋”，下层称为“小额枋”。在两额枋之间有由额垫板。" Img="额枋">
 							<TransformInfo>
 								<ComponentTransformInfo>
@@ -392,7 +375,24 @@
 						</Component>
 					</Components>
 				</ConstructionOrder>
-				<!--4下横梁-->
+				<!--3下横梁-->
+				<ConstructionOrder>
+					<Components>
+						<Component Name="雀替" Info="雀替，原是放在柱子上端用来与柱子共同承受上部压力的物件，他的具体位置在梁与柱或枋与柱的交接处，它除了具有一定的承重作用外，还可以减少梁，枋的跨距或是增加梁头的抗剪能力。" Img="雀替">
+							<TransformInfo>
+								<ComponentTransformInfo>
+									<PX>0.002783313</PX>
+									<PY>0.08018379</PY>
+									<PZ>-0.007162578</PZ>
+									<RX>0</RX>
+									<RY>0</RY>
+									<RZ>0</RZ>
+								</ComponentTransformInfo>
+							</TransformInfo>
+						</Component>
+					</Components>
+				</ConstructionOrder>
+				<!--4雀替-->
 				<ConstructionOrder>
 					<Components>
 						<Component Name="斗拱" Info="斗拱，是中国古代木构架建筑的显著特点之一。它由重叠的曲木和斗形木块组合而成，安装在平板枋上，是柱子与梁架之间的过渡构件。" Img="斗拱">

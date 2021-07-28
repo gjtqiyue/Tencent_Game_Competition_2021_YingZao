@@ -55,6 +55,19 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Update()
+    {
+        if (gameState == GameState.InGame)
+        {
+            if (Keyboard.current.numpadMinusKey.isPressed)
+            {
+                gameProgress[GameProgressState.木作] = true;
+                gameProgress[GameProgressState.漆作] = true;
+                gameProgress[GameProgressState.石作] = true;
+            }
+        }
+    }
+
     void Start()
     {
         //define what will happen when game is paused
@@ -97,10 +110,10 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         Debug.Log("[" + Time.time + "]" + " Ending game ...");
-        gameState = GameState.FinishedGame;
-        StopCoroutine(GamePauseCheck());
+        StopAllCoroutines();
         gameEndDelegate?.Invoke();
         gameProgress.Clear();
+        gameState = GameState.FinishedGame;
         ChangeToMenuScene();
     }
 
@@ -253,6 +266,12 @@ public class GameManager : MonoBehaviour
         GameObject intro = GameObject.Find("IntroSequence");
         PlayableDirector d = intro.GetComponent<PlayableDirector>();
         if (d == null) Debug.LogError("No PlayableDirector found for intro sequence");
+        Debug.Log("Play Intro");
         d.Play();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
