@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using System;
 using TMPro;
-
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class GameManager : MonoBehaviour
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         {
             gameProgress.Add(state, false);
         }
-
+        PlayIntro();
         Debug.Log("[" + Time.time + "]" + " Game initialization done");
     }
 
@@ -220,9 +220,14 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public void SetGameState(GameProgressState progressState, bool state)
+    public void FinishMiniWork(GameProgressState progressState, bool state)
     {
         gameProgress[progressState] = state;
+        //switch camera
+        GameObject.Find("MiniGameCamera").GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 0;
+        //enable playerinput
+        GameObject player = GetPlayer();
+        if (player != null) player.GetComponent<CharacterController>().EnableInput();
     }
 
     public Dictionary<GameProgressState, bool> GetGameProgress()
@@ -232,8 +237,22 @@ public class GameManager : MonoBehaviour
 
     public void PlayMiniWorkGame(GameProgressState workType)
     {
+        if (gameState != GameState.InGame) return;
+        GameObject camera = GameObject.Find("MiniGameCamera");
         GameObject gamePlayPrefab = Resources.Load<GameObject>("Prefabs/Gameplay/" + Enum.GetName(typeof(GameProgressState), workType));
-        Instantiate(gamePlayPrefab).SetActive(true);
-        
+        Instantiate(gamePlayPrefab, new Vector3(camera.transform.position.x, camera.transform.position.y, 0), Quaternion.identity).SetActive(true);
+        //switch camera
+        camera.GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = 100;  //set to a big enough number
+        //disable playerinput
+        GameObject player = GetPlayer();
+        if (player != null) player.GetComponent<CharacterController>().DisableInput();
+    }
+
+    public void PlayIntro()
+    {
+        GameObject intro = GameObject.Find("IntroSequence");
+        PlayableDirector d = intro.GetComponent<PlayableDirector>();
+        if (d == null) Debug.LogError("No PlayableDirector found for intro sequence");
+        d.Play();
     }
 }

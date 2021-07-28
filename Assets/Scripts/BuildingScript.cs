@@ -32,6 +32,7 @@ public class BuildingScript : BaseControlUnit
     public PlayableDirector finalSequencePlayer;
     public GameObject blueprintButton;
     public Animator cameraSwitch;
+    public AudioSource audio;
 
 
     [Header("Component data")]
@@ -81,6 +82,8 @@ public class BuildingScript : BaseControlUnit
 
         buildTotal = Enum.GetValues(typeof(BlueprintType)).Length;
         buildProgress = 0;
+
+        audio.Play();
 
         //Start main loop
         StartCoroutine(ConstructionMain());
@@ -137,8 +140,8 @@ public class BuildingScript : BaseControlUnit
         }
 
         //Finish all the build, trigger the camera track
+        audio.Stop();
         Debug.Log("finish everything, trigger dolly track");
-        cameraSwitch.Play("ShowState");
         finalSequencePlayer.Play();
         while (finalSequencePlayer.state == PlayState.Playing)
         {
@@ -272,6 +275,7 @@ public class BuildingScript : BaseControlUnit
                             Quaternion rot = Quaternion.Euler(info.rx, info.ry, info.rz);
                             Debug.Log(loc.ToString());
                             GameObject gameObj = Instantiate(toSpawn, mainParent.position + loc * mainParent.localScale.x, rot, mainParent);
+                            gameObj.GetComponent<Collider>().enabled = false;
                         }
                         allPossibleSpawnPoints.Clear();
                         foreach (GameObject key in previewGameObjects.Keys)
@@ -313,6 +317,7 @@ public class BuildingScript : BaseControlUnit
     void ShowInfoPanel(string info, string img)
     {
         if (infoPanel.activeSelf) return;
+        if (info == "") return;
         infoPanel.SetActive(true);
         infoPanel.GetComponent<InfoPanel>().UpdateInfo(info, img);
     }

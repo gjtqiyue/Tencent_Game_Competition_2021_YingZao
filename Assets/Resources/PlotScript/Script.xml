@@ -54,10 +54,10 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">终于是时候开始施工了</Line>
-		<Line name="main">要完成搭建，我需要从基层开始，进行每一层的搭建</Line>
-		<Line name="main">每一步的步骤是经过层层考量的，所以顺序很重要，我需要观看图纸避免错误的搭建</Line>
-		<Line name="main">选择需要的部件来进行搭建，让我们来试一试吧</Line>
+		<Line name="main">佛香阁开工动土之期已至</Line>
+		<Line name="main">修建之事步骤繁多，每一步都要经过细致考量</Line>
+		<Line name="main">若是对修建之事有疑惑，我可查看工事图纸</Line>
+		<Line name="main">事不宜迟，这便开始吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -79,7 +79,9 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">不错！现在开始第二层吧</Line>
+		<Line name="main">第一层阁楼已搭建完成</Line>
+		<Line name="main">想必这营造步骤也已了然于心</Line>
+		<Line name="main">后面的步骤与之相似，我便加快速度吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -89,6 +91,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
+		<Line name="main">为节省时间，后面的步骤已经省略，可直接搭建成品</Line>
 	</Scenario>
 
 	<Scenario name="FinishSecond" isLoop="False">
@@ -101,7 +104,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第二层完成！</Line>
+		<Line name="main">第二层完成了</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -123,7 +126,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第三层开始！</Line>
+		<Line name="main">第三层也不能懈怠</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -145,7 +148,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第三层完工!</Line>
+		<Line name="main">第三层完工!还有最后一步便可告一段落了</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -167,7 +170,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第四层，加油！</Line>
+		<Line name="main">第四层乃最重要的一步，这房顶的搭建极为考究，同时也是最危险的一步</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -189,9 +192,10 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">完成了！</Line>
-		<Line name="main">但是这不是最后一步，一个建筑的完成还要经过很多善后工序，在这里我就不一一陈列了</Line>
-		<Line name="main">到这一步已经是工程上的一个里程碑了</Line>
+		<Line name="main">至此，佛香阁的修建基本告竣</Line>
+		<Line name="main">其余彩画绘制、游廊修建等事另有处理</Line>
+		<Line name="main">这便是前临湖水，后倚山麓的佛香阁了</Line>
+		<Line name="main">让我们先稍事休息，欣赏我们的成果吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -214,7 +218,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">你好</Line>
+		<Line name="main">在下是样式房掌案雷廷昌</Line>
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -224,9 +228,10 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">你好</Line>
-		<Line name="main">我需要做木工</Line>
-		<Line name="npc1">请跟我来</Line>
+		<Line name="npc1">在下是钦工处专员</Line>
+		<Line name="main">幸会</Line>
+		<Line name="main">我要做木作</Line>
+		<Line name="npc1">雷大人请</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -265,9 +270,8 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">你已经完成木作所有的准备工作</Line>
-		<Line name="npc1">完成石作和漆作之后，你就可以着手营造了</Line>
-		<Line name="main">再见</Line>
+		<Line name="npc1">您已经完成木作所有的准备工作</Line>
+		<Line name="npc1">完成石作和漆作之后，大人就可以着手营造了</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -277,7 +281,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="npc1">再见</Line>
+		<Line name="npc1">大人慢走</Line>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -299,7 +303,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">你好</Line>
+		<Line name="main">在下雷廷昌</Line>
 		<Figure target="npc2" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -309,9 +313,9 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc2">你好</Line>
+		<Line name="npc2">在下是钦工处石作专员</Line>
 		<Line name="main">我需要做石作</Line>
-		<Line name="npc2">请跟我来</Line>
+		<Line name="npc2">请大人跟我来</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -350,9 +354,9 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">你已经完成石作所有的准备工作</Line>
-		<Line name="npc1">请抓紧完成木作和漆作吧</Line>
-		<Line name="main">再见</Line>
+		<Line name="npc1">石作所有的准备工作已完成</Line>
+		<Line name="npc1">请大人抓紧完成木作和漆作吧</Line>
+		<Line name="main">再会</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -362,7 +366,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="npc1">再见</Line>
+		<Line name="npc1">慢走</Line>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -384,7 +388,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">你好</Line>
+		<Line name="main">在下是雷廷昌</Line>
 		<Figure target="npc3" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -394,9 +398,9 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc3">你好</Line>
-		<Line name="main">我需要做漆作</Line>
-		<Line name="npc3">请跟我来</Line>
+		<Line name="npc3">雷大人</Line>
+		<Line name="main">我需要漆作</Line>
+		<Line name="npc3">这边请</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -435,9 +439,9 @@
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">你已经完成漆作所有的准备工作</Line>
+		<Line name="npc1">大人，漆作已经结束</Line>
 		<Line name="npc1">抓紧时间着手其他的准备工作吧</Line>
-		<Line name="main">再见</Line>
+		<Line name="main">再会</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -447,7 +451,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="npc1">再见</Line>
+		<Line name="npc1">再会</Line>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>

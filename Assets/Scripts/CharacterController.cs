@@ -13,6 +13,8 @@ public class CharacterController : BaseControlUnit
 {
     readonly Vector3 flippedScale = new Vector3(-1, 1, 1);
 
+    public bool canMove;
+
     [Header("Character")]
     [SerializeField] Animator animator = null;
     [SerializeField] Transform puppet = null;
@@ -41,12 +43,11 @@ public class CharacterController : BaseControlUnit
     private int animatorRunningSpeed;
     private int animatorDirection;
 
-    public bool CanMove { get; set; }
-
     protected override void Start()
     {
         base.Start();
 
+        //Disable movement during the conversation
         DialogueManager.GetInstance().scenarioEventStartDelegate += DisableInputCheck;
         DialogueManager.GetInstance().scenarioEventEndDelegate += EnableInputCheck;
 
@@ -80,7 +81,7 @@ public class CharacterController : BaseControlUnit
         animatorRunningSpeed = Animator.StringToHash("RunningSpeed");
         animatorDirection = Animator.StringToHash("Direction");
 
-        CanMove = true;
+        canMove = true;
     }
 
     void Update()
@@ -90,7 +91,7 @@ public class CharacterController : BaseControlUnit
         if (!inputEnabled)
             return;
 
-        if (!CanMove || keyboard == null)
+        if (!canMove || keyboard == null)
             return;
 
         // Horizontal movement
@@ -126,9 +127,6 @@ public class CharacterController : BaseControlUnit
             groundType = GroundType.Hard;
         else
             groundType = GroundType.None;
-
-        // Update animator
-        animator.SetBool(animatorGroundedBool, groundType != GroundType.None);
     }
 
     private void UpdateVelocity()
@@ -147,7 +145,7 @@ public class CharacterController : BaseControlUnit
         animator.SetFloat(animatorRunningSpeed, horizontalSpeedNormalized);
 
         // Play audio
-        //audioPlayer.PlaySteps(groundType, horizontalSpeedNormalized);
+        audioPlayer.PlaySteps(groundType, horizontalSpeedNormalized);
     }
 
     private void UpdateDirection()
@@ -195,4 +193,15 @@ public class CharacterController : BaseControlUnit
             gameObj.GetComponent<IInteractable>().CancelInteraction();
         }
     }
+
+    public void DisableInput()
+    {
+        DisableInputCheck();
+    }
+
+    public void EnableInput()
+    {
+        EnableInputCheck();
+    }
+
 }

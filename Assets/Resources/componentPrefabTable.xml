@@ -2,26 +2,26 @@
 
 <ComponentPrefabTable>
 	<Entries>
-		<Entry Name="外圆柱">
-			<Prefab>外圆柱</Prefab>
+		<Entry Name="檐柱">
+			<Prefab>檐柱</Prefab>
 		</Entry>
-		<Entry Name="中圆柱">
-			<Prefab>中圆柱</Prefab>
+		<Entry Name="金柱">
+			<Prefab>金柱</Prefab>
 		</Entry>
-		<Entry Name="内圆柱">
-			<Prefab>内圆柱</Prefab>
+		<Entry Name="擎天柱">
+			<Prefab>擎天柱</Prefab>
 		</Entry>
-		<Entry Name="围合结构">
-			<Prefab>围合结构</Prefab>
+		<Entry Name="围合">
+			<Prefab>围合</Prefab>
 		</Entry>
-		<Entry Name="上横梁">
-			<Prefab>上横梁</Prefab>
+		<Entry Name="桁">
+			<Prefab>桁</Prefab>
 		</Entry>
-		<Entry Name="下横梁">
-			<Prefab>下横梁</Prefab>
+		<Entry Name="额枋">
+			<Prefab>额枋</Prefab>
 		</Entry>
-		<Entry Name="梁">
-			<Prefab>梁</Prefab>
+		<Entry Name="挑尖梁">
+			<Prefab>挑尖梁</Prefab>
 		</Entry>
 		<Entry Name="斗拱">
 			<Prefab>斗拱</Prefab>

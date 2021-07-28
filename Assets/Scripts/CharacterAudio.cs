@@ -21,8 +21,7 @@ public class CharacterAudio : MonoBehaviour
     {
         if (groundType == GroundType.None)
             return;
-
-        stepsTimer += Time.fixedDeltaTime * speedNormalized;
+        stepsTimer += Time.fixedDeltaTime * speedNormalized * 10;
 
         if (stepsTimer >= stepsTimeGap)
         {

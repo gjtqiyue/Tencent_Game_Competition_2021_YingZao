@@ -160,14 +160,14 @@ public class DialogueManager : BaseControlUnit
 
             if (allowSkip)
             {
-                if (skipTrigger && Keyboard.current.fKey.isPressed && inputEnabled)
+                if (skipTrigger && Mouse.current.leftButton.isPressed)
                 {
                     //print the whole string
                     view.UpdateLineView(character, text);
                     skipTrigger = false;
                     while (true)
                     {
-                        if (inputEnabled && !skipTrigger && Keyboard.current.fKey.wasReleasedThisFrame)
+                        if (inputEnabled && !skipTrigger && Mouse.current.leftButton.wasPressedThisFrame)
                         {
                             skipTrigger = true;
                             i = text.Length + 1;
@@ -188,9 +188,9 @@ public class DialogueManager : BaseControlUnit
         bool nextLine = false;
         while (!nextLine)
         {
-            if (inputEnabled && skipTrigger && Keyboard.current.fKey.wasPressedThisFrame) { skipTrigger = false; }
-            if (inputEnabled && !skipTrigger && Keyboard.current.fKey.wasReleasedThisFrame) { nextLine = true; skipTrigger = true; }
-            yield return new WaitForEndOfFrame();
+            if (inputEnabled && skipTrigger && Mouse.current.leftButton.isPressed) { skipTrigger = false; }
+            if (inputEnabled && !skipTrigger && Mouse.current.leftButton.wasReleasedThisFrame) { nextLine = true; skipTrigger = true; }
+            yield return new WaitForSeconds(0.0001f);
         }
 
         //callback

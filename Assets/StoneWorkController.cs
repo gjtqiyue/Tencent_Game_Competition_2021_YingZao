@@ -27,6 +27,6 @@ public class StoneWorkController : BaseControlUnit
 
         //Hide panel
         gameObject.SetActive(false);
-        gameMgr.SetGameState(GameProgressState.石作, true);
+        gameMgr.FinishMiniWork(GameProgressState.石作, true);
     }
 }

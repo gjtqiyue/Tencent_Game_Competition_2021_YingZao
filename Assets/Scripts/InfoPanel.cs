@@ -39,7 +39,8 @@ public class InfoPanel : MonoBehaviour
 
     public void UpdateInfo(string info, string img)
     {
-        Sprite s = Resources.Load<Sprite>("Resources/Info/" + img);
+        Sprite s = Resources.Load<Sprite>("Info/" + img);
+        spriteRenderer.sprite = null;
         if (s != null)
             spriteRenderer.sprite = s;
         

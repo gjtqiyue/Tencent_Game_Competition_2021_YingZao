@@ -153,7 +153,7 @@ public class WoodWorkSpawner : BaseControlUnit
 
         //Hide panel
         gameObject.SetActive(false);
-        gameMgr.SetGameState(GameProgressState.Ä¾×÷, true);
+        gameMgr.FinishMiniWork(GameProgressState.Ä¾×÷, true);
     }
 
     private void Update()

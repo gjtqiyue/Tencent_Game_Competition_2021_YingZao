@@ -6,7 +6,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="地基">
+						<Component Name="地基" Info="地基，是指基础以下的部分，承受着全部建筑物重量的土层或岩石，统称地基。地基可分为自然地基和人工地基。\n 台基是建筑的基座，即建在地面上的方座部分。台基的上平面就是室内地坪，四周边称为“台帮”，将柱础、磉墩、拦土墙全部包砌在台帮内，这样就构成了台基。" Img="地基">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002915874</PX>
@@ -23,7 +23,7 @@
 				<!--1地基-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="外圆柱">
+						<Component Name="檐柱" Info="檐柱，位于房屋前、后檐最外一排的柱子。檐柱又可分为前檐柱、后檐柱。每个檐柱的名称是以其所处的位置确定的，如“前檐明间东缝檐柱”、“后檐西次间西缝檐柱”等。这种称谓表明了柱子所在的位置。" Img="檐柱">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.0006699518</PX>
@@ -219,7 +219,7 @@
 								</ComponentTransformInfo>
 							</TransformInfo>
 						</Component>
-						<Component Name="中圆柱">
+						<Component Name="金柱" Info="金柱，位于檐柱内，与檐柱平行，上承梁架，但又不是在房屋中线上的一列柱子称为“金柱”。在前檐的称为“前檐金柱”，在后檐的称为“后檐金柱”。如果建筑进深间数较多时，则室内金柱列就多。间数多到五开间时就会出现前后各有两列金柱，这时则有外围金柱和里围金柱之分。" Img="金柱">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.01388026</PX>
@@ -287,7 +287,7 @@
 								</ComponentTransformInfo>
 							</TransformInfo>
 						</Component>
-						<Component Name="内圆柱">
+						<Component Name="擎天柱" Info="擎天柱，铁梨木制成，有八根大柱贯穿楼层，撑起整个建筑。" Img="擎天柱">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002912179</PX>
@@ -305,7 +305,7 @@
 				<!--2圆柱-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="雀替">
+						<Component Name="雀替" Info="雀替，原是放在柱子上端用来与柱子共同承受上部压力的物件，他的具体位置在梁与柱或枋与柱的交接处，它除了具有一定的承重作用外，还可以减少梁，枋的跨距或是增加梁头的抗剪能力。" Img="雀替">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002783313</PX>
@@ -322,7 +322,7 @@
 				<!--3雀替-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="下横梁">
+						<Component Name="额枋" Info="额枋，安装在檐柱上，是两檐柱之间的连接构件，同时又承担着檐步的一部分荷载，也是压弯构件。在比较大的殿宇中，往往做两层额枋。上层称为“大额枋”，下层称为“小额枋”。在两额枋之间有由额垫板。" Img="额枋">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002757392</PX>
@@ -395,7 +395,7 @@
 				<!--4下横梁-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="斗拱">
+						<Component Name="斗拱" Info="斗拱，是中国古代木构架建筑的显著特点之一。它由重叠的曲木和斗形木块组合而成，安装在平板枋上，是柱子与梁架之间的过渡构件。" Img="斗拱">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002867311</PX>
@@ -419,7 +419,7 @@
 								</ComponentTransformInfo>
 							</TransformInfo>
 						</Component>
-						<Component Name="梁">
+						<Component Name="挑尖梁" Info="挑尖梁，连接金柱和檐柱的梁，提醒较为短小，但梁头通常都做成较为复杂的形式。并不起承重作用，主要起连接作用。" Img="挑尖梁">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.0006508455</PX>
@@ -506,7 +506,7 @@
 				<!--5斗拱+梁+墙-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="上横梁">
+						<Component Name="桁" Info="桁，也称为“檩”。桁的断面为圆形，大多沿面阔方向设置，安装在各梁的端头。在庑殿顶、歇山顶、攒尖顶建筑上有进深方向的桁。桁上承椽子。屋面重量通过椽子全部传递给桁，桁为受均布荷载的压弯构件。桁的名称由其所在的位置来确定。" Img="桁">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002757392</PX>
@@ -579,7 +579,7 @@
 				<!--6上横梁-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="围合结构">
+						<Component Name="围合">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.00277479</PX>
@@ -596,7 +596,7 @@
 				<!--7围合结构（楼板）-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="房瓦" Info="房顶科普内容" Img="">
+						<Component Name="房瓦" Info="房顶科普内容" Img="房瓦">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002774745</PX>
@@ -617,7 +617,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="二层">
+						<Component Name="二层" Info="二层类似一层" Img="二层">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002906219</PX>
@@ -657,7 +657,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="四层">
+						<Component Name="四层" Info="四层" Img="四层">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002906219</PX>
