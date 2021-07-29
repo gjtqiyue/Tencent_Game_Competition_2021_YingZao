@@ -171,7 +171,7 @@ public class CharacterController : BaseControlUnit
     {
         if (gameObj.tag == "Interactable")
         {
-            if (inputEnabled && Keyboard.current.eKey.isPressed)
+            if (inputEnabled && canMove && Keyboard.current.eKey.isPressed)
             {
                 gameObj.GetComponent<IInteractable>().TriggerInteraction();
             }
@@ -189,11 +189,13 @@ public class CharacterController : BaseControlUnit
     public void DisableInput()
     {
         DisableInputCheck();
+        canMove = false;
     }
 
     public void EnableInput()
     {
         EnableInputCheck();
+        canMove = true;
     }
 
 }

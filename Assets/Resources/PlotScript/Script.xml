@@ -59,7 +59,7 @@
 		<Line name="main">修建之事步骤繁多，每一步都要经过细致考量</Line>
 		<Line name="main">若是对修建之事有疑惑，我可查看工事图纸</Line>
 		<Line name="main">根据图纸，体验建筑的搭建顺序</Line>
-		<Line name="main">哦差点忘了，按住鼠标右键拖动可以转动镜头，全方位观察</Line>
+		<Line name="main">差点忘了，按住鼠标右键拖动可以转动镜头，全方位观察</Line>
 		<Line name="main">事不宜迟，这便开始吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
