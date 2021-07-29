@@ -83,31 +83,29 @@ public class CharacterController : BaseControlUnit
     {
         var keyboard = Keyboard.current;
 
-        if (!inputEnabled)
-            return;
-
-        if (!canMove || keyboard == null)
-            return;
-
         // Horizontal movement
         float moveHorizontal = 0.0f;
 
-        if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed)
+        if (keyboard == null)
+            return;
+
+        if (inputEnabled && canMove)
         {
-            moveHorizontal = -1.0f;
+            if (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed)
+            {
+                moveHorizontal = -1.0f;
+            }
+            else if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed)
+            {
+                moveHorizontal = 1.0f;
+            }
         } 
-        else if (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed)
-        {
-            moveHorizontal = 1.0f;
-        }
-           
 
         movementInput = new Vector2(moveHorizontal, 0);
     }
 
     void FixedUpdate()
     {
-        if (!inputEnabled) return;
         UpdateGrounding();
         UpdateVelocity();
         UpdateDirection();
