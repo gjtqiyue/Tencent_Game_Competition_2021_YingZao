@@ -23,6 +23,7 @@ public class ColorPatternScript : BaseControlUnit
         for (int j = 0; j < piecePrefabs.Length; j++)
         {
             GameObject piece = Instantiate(piecePrefabs[j], transform);
+            //piece.transform.position += transform.position;
             piecesData.Add(piece.GetComponent<ColorPatternPiece>());
         }
     }

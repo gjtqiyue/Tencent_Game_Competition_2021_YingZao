@@ -526,7 +526,7 @@
 				<!--7围合结构（楼板）-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="房瓦" Info="房顶科普内容" Img="房瓦">
+						<Component Name="房瓦" Info="" Img="房瓦">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002774745</PX>
@@ -587,7 +587,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="四层" Info="四层" Img="四层">
+						<Component Name="四层" Info="" Img="四层">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002906219</PX>

@@ -11,6 +11,7 @@ public class NPCTrigger : MonoBehaviour, IInteractable
     [SerializeField] TextMeshProUGUI hintText;
     public void TriggerInteraction()
     {
+        hintText.gameObject.SetActive(false);
         StartCoroutine(TriggerNPCTalk());
     }
 

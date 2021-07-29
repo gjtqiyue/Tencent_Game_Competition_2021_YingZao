@@ -14,6 +14,7 @@ public class IntroTrigger : MonoBehaviour, IInteractable
 
     public void TriggerInteraction()
     {
+        hintText.gameObject.SetActive(false);
         DialogueManager.GetInstance().TriggerScenario("Intro");
     }
 
