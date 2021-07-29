@@ -499,7 +499,12 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">木工指引</Line>
+		<Line name="main">木工是建筑工序里必不可少的一环，我们需要对木头进行切割处理，才可以进一步做成需要的形状</Line>
+		<Line name="main">接下来我会讲解具体的操作方式</Line>
+		<Line name="main">我们需要切一定数量的木头，完成度会在左上角显示</Line>
+		<Line name="main">使用W和S键控制红点上下移动来切割黄色的线</Line>
+		<Line name="main">每一个木头需要精准切割80%以上才可以通过</Line>
+		<Line name="main">让我们试试吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -521,7 +526,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">木工结束</Line>
+		<Line name="main">木工结束了，抓紧时间前往下一个地点吧。</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -565,7 +570,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">石作完成</Line>
+		<Line name="main">成功完成石作</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -587,7 +592,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">漆作开始</Line>
+		<Line name="main">接下来是漆作环节，顾名思义，这部分是围绕漆和上色的。总共需要三个步骤，油漆调色，彩画制作，以及彩画上色。你需要完成每一步才可以成功。</Line>
 	</Scenario>
 
 	<Scenario name="ColorWorkMixGameIntro" isLoop="False">
@@ -600,7 +605,12 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">调制指引</Line>
+		<Line name="main">调色的门道可是很深呐</Line>
+		<Line name="main">要调色，我们需要按一定的比例混合颜料，水和骨胶</Line>
+		<Line name="main">这一步，顺序和比例都十分重要</Line>
+		<Line name="main">首先我们要加颜料</Line>
+		<Line name="main">颜料加过后，按照水的比例加水，骨胶同理</Line>
+		<Line name="main">随后我们再开始加入第二层颜料，以此类推，直到加入所有需要的颜料即可</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -622,7 +632,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">调制结束</Line>
+		<Line name="main">调制结束！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -644,7 +654,9 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">图层指引</Line>
+		<Line name="main">彩画的绘制可以很简单也可以很复杂，而这一步我们要做的就是把这彩画的线图画出来</Line>
+		<Line name="main">你将有5秒钟的时间记住彩画的图案，然后根据记忆来把未完成的彩画完成</Line>
+		<Line name="main">按住鼠标，拖拽目标部件，然后把它放进不同的位置上去，注意因为彩画是对称的，所以一片图案可以对应多个地方，请慎重选择</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -666,7 +678,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">图层结束</Line>
+		<Line name="main">彩画终于制作完成，接下来就是最后一步，上色！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -688,7 +700,8 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">上漆指引</Line>
+		<Line name="main">上漆，我们需要根据对照图选择对应的颜色涂抹对应的区域</Line>
+		<Line name="main">所有需要的颜色已准备好，所以只需要选择对应的颜色便可成功上漆</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -710,7 +723,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">上漆结束</Line>
+		<Line name="main">上漆结束啦！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -732,7 +745,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">漆作结束</Line>
+		<Line name="main">这样我们的漆作就先告一段落了，我们继续找其他的作坊吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
