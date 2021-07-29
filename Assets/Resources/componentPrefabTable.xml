@@ -11,8 +11,8 @@
 		<Entry Name="擎天柱">
 			<Prefab>擎天柱</Prefab>
 		</Entry>
-		<Entry Name="围合">
-			<Prefab>围合</Prefab>
+		<Entry Name="楼板">
+			<Prefab>楼板</Prefab>
 		</Entry>
 		<Entry Name="桁">
 			<Prefab>桁</Prefab>

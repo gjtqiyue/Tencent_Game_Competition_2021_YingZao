@@ -6,7 +6,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="地基" Info="地基，是指基础以下的部分，承受着全部建筑物重量的土层或岩石，统称地基。地基可分为自然地基和人工地基。\n 台基是建筑的基座，即建在地面上的方座部分。台基的上平面就是室内地坪，四周边称为“台帮”，将柱础、磉墩、拦土墙全部包砌在台帮内，这样就构成了台基。" Img="地基">
+						<Component Name="地基" Info="地基，是指基础以下的部分，承受着全部建筑物重量的土层或岩石，统称地基。地基可分为自然地基和人工地基。台基是建筑的基座，即建在地面上的方座部分。台基的上平面就是室内地坪，四周边称为“台帮”，将柱础、磉墩、拦土墙全部包砌在台帮内，这样就构成了台基。" Img="地基">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002915874</PX>
@@ -509,7 +509,7 @@
 				<!--6上横梁-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="围合">
+						<Component Name="楼板">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.00277479</PX>
@@ -526,7 +526,7 @@
 				<!--7围合结构（楼板）-->
 				<ConstructionOrder>
 					<Components>
-						<Component Name="房瓦" Info="" Img="房瓦">
+						<Component Name="房瓦">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002774745</PX>
@@ -547,7 +547,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="二层" Info="二层类似一层" Img="二层">
+						<Component Name="二层">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002906219</PX>
@@ -587,7 +587,7 @@
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="四层" Info="" Img="四层">
+						<Component Name="四层">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002906219</PX>

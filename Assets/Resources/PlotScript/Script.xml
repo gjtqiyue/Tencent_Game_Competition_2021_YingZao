@@ -58,6 +58,8 @@
 		<Line name="main">佛香阁开工动土之期已至</Line>
 		<Line name="main">修建之事步骤繁多，每一步都要经过细致考量</Line>
 		<Line name="main">若是对修建之事有疑惑，我可查看工事图纸</Line>
+		<Line name="main">根据图纸，体验建筑的搭建顺序</Line>
+		<Line name="main">哦差点忘了，按住鼠标右键拖动可以转动镜头，全方位观察</Line>
 		<Line name="main">事不宜迟，这便开始吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
@@ -632,7 +634,7 @@
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">调制结束！</Line>
+		<Line name="main">调制结束！接下来进行彩画的绘制</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -656,7 +658,7 @@
 		</Figure>
 		<Line name="main">彩画的绘制可以很简单也可以很复杂，而这一步我们要做的就是把这彩画的线图画出来</Line>
 		<Line name="main">你将有5秒钟的时间记住彩画的图案，然后根据记忆来把未完成的彩画完成</Line>
-		<Line name="main">按住鼠标，拖拽目标部件，然后把它放进不同的位置上去，注意因为彩画是对称的，所以一片图案可以对应多个地方，请慎重选择</Line>
+		<Line name="main">按住鼠标，拖动目标部件，然后把它放进不同的位置上去，注意因为彩画是对称的，所以一片图案可以对应多个地方，请慎重选择</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
