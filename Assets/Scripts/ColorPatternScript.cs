@@ -49,6 +49,7 @@ public class ColorPatternScript : BaseControlUnit
     }
 
     ColorPatternPiece selectedPiece;
+    ColorPatternPiece prev;
     [SerializeField] private float returnToPositionTime;
 
     public IEnumerator ColorPatternMain()
@@ -82,49 +83,63 @@ public class ColorPatternScript : BaseControlUnit
             Vector3 mousePosWorld = Camera.main.ScreenToWorldPoint(pos);
             Ray r = Camera.main.ScreenPointToRay(pos);
             RaycastHit hit;
-            if (!Physics.Raycast(r, out hit, 100, layerMask, QueryTriggerInteraction.Ignore)) Debug.LogError("No raycast hit from mouse");
-            if (hit.transform.tag != "ColorPatternPiece") break;
-
-            if (selectedPiece != null)
+            if (Physics.Raycast(r, out hit, 1000))
             {
-                //if we have something selected
-                if (Mouse.current.leftButton.isPressed)
+                if (prev != null) prev.RemoveHighlight();
+                if (selectedPiece != null)
                 {
-                    //move with the mouse point
-                    selectedPiece.transform.position = hit.point;
-                }
-                else
-                {
-                    //check if position is correct
-                    if (selectedPiece.CheckIfValid())
+
+                    //if we have something selected
+                    if (Mouse.current.leftButton.isPressed)
                     {
-                        selectedPiece.SetToPosition();
-                        pieces.Remove(selectedPiece);
-                        selectedPiece = null;
+
+                        selectedPiece.transform.position = hit.point;
                     }
                     else
                     {
-                        //return to position
-                        selectedPiece.ReturnToPosition(returnToPositionTime);
-                        selectedPiece.GetComponent<Collider>().isTrigger = false;
+                        if (selectedPiece.CheckIfValid(hit.point))
+                        {
+                            selectedPiece.SetToPosition();
+                            selectedPiece.RemoveHighlight();
+                            pieces.Remove(selectedPiece);
+                            selectedPiece = null;
+                        }
+                        else
+                        {
+                            //return to position
+                            selectedPiece.ReturnToPosition(returnToPositionTime);
+                            selectedPiece.RemoveHighlight();
+                            selectedPiece = null;
+                            //selectedPiece.GetComponent<Collider>().enabled = false;
+                        }
                     }
-                    
                 }
-            }
-            else
-            {
-                //show hover effect
-                ColorPatternPiece hitPiece = hit.transform.GetComponent<ColorPatternPiece>();
-                hitPiece.ShowHighlight();
-
-                if (Mouse.current.leftButton.isPressed)
+                else
                 {
-                    //move with the mouse point
-                    selectedPiece = hitPiece;
-                    selectedPiece.GetComponent<Collider>().isTrigger = true;  //turn the selected object into trigger so the raycast won't hit it
-                    hitPiece.RemoveHighlight();
+                    if (hit.transform.tag == "ColorPatternPiece" && selectedPiece == null)
+                    {
+                        //show hover effect
+                        ColorPatternPiece hitPiece = hit.transform.GetComponent<ColorPatternPiece>();
+                        //hitPiece.ShowHighlight();
+                        //cancel previous piece's highlight
+                        //if (prev != null)
+                        //{
+                        //    prev.RemoveHighlight();
+                        //}
+                        //prev = hitPiece;
+
+                        if (Mouse.current.leftButton.isPressed)
+                        {
+                            //move with the mouse point
+                            selectedPiece = hitPiece;
+                            //selectedPiece.GetComponent<Collider>().enabled = true;  //turn the selected object into trigger so the raycast won't hit it
+                            hitPiece.RemoveHighlight();
+                        }
+                    }
                 }
             }
+
+            yield return new WaitForEndOfFrame();
         }
 
         //when all finished, proceed

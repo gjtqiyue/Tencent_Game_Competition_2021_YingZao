@@ -422,81 +422,11 @@
 						<Component Name="挑尖梁" Info="挑尖梁，连接金柱和檐柱的梁，提醒较为短小，但梁头通常都做成较为复杂的形式。并不起承重作用，主要起连接作用。" Img="挑尖梁">
 							<TransformInfo>
 								<ComponentTransformInfo>
-									<PX>0.0006508455</PX>
-									<PY>0.08027489</PY>
-									<PZ>0.006087472</PZ>
+									<PX>0.0028</PX>
+									<PY>0.08024907</PY>
+									<PZ>-0.0076</PZ>
 									<RX>0</RX>
 									<RY>0</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>-0.007911331</PX>
-									<PY>0.08022325</PY>
-									<PZ>0.0007530896</PZ>
-									<RX>0</RX>
-									<RY>-45</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>-0.01033823</PX>
-									<PY>0.08027489</PY>
-									<PZ>-0.009707442</PZ>
-									<RX>0</RX>
-									<RY>-90</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>-0.004909325</PX>
-									<PY>0.08027489</PY>
-									<PZ>-0.01817242</PZ>
-									<RX>0</RX>
-									<RY>45</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>0.004864641</PX>
-									<PY>0.08027489</PY>
-									<PZ>-0.02036899</PZ>
-									<RX>0</RX>
-									<RY>180</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>0.01370166</PX>
-									<PY>0.08027489</PY>
-									<PZ>-0.01494894</PZ>
-									<RX>0</RX>
-									<RY>-45</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>0.01607283</PX>
-									<PY>0.08027489</PY>
-									<PZ>-0.004973107</PZ>
-									<RX>0</RX>
-									<RY>90</RY>
-									<RZ>0</RZ>
-								</ComponentTransformInfo>
-							</TransformInfo>
-							<TransformInfo>
-								<ComponentTransformInfo>
-									<PX>0.0105944</PX>
-									<PY>0.08027489</PY>
-									<PZ>0.003654743</PZ>
-									<RX>0</RX>
-									<RY>45</RY>
 									<RZ>0</RZ>
 								</ComponentTransformInfo>
 							</TransformInfo>

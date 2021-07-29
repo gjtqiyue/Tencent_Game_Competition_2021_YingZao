@@ -23,12 +23,7 @@ public class CharacterController : BaseControlUnit
     [Header("Movement")]
     [SerializeField] float acceleration = 0.0f;
     [SerializeField] float maxSpeed = 0.0f;
-    [SerializeField] float jumpForce = 0.0f;
     [SerializeField] float minFlipSpeed = 0.1f;
-    [SerializeField] float jumpGravityScale = 1.0f;
-    [SerializeField] float fallGravityScale = 1.0f;
-    [SerializeField] float groundedGravityScale = 1.0f;
-    [SerializeField] bool resetSpeedOnLand = false;
 
     private Rigidbody2D controllerRigidbody;
     private Collider2D controllerCollider;
@@ -133,9 +128,6 @@ public class CharacterController : BaseControlUnit
     {
 
         Vector3 velocity = new Vector3(movementInput.x, movementInput.y, 0) * acceleration * Time.fixedDeltaTime;
-
-        // Clamp horizontal speed.
-        velocity.x = Mathf.Clamp(velocity.x, -maxSpeed, maxSpeed);
 
         // Assign back to the body.
         gameObject.transform.position += new Vector3(velocity.x, velocity.y, 0);

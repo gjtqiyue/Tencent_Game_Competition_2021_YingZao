@@ -45,14 +45,16 @@ public class ColorPatternPiece : MonoBehaviour
         highlight.SetActive(false);
     }
 
-    internal bool CheckIfValid()
+    internal bool CheckIfValid(Vector3 point)
     {
         //check if position matches
-        return (originalPosition - transform.position).magnitude <= distanceErrorTolerance && (transform.rotation.eulerAngles - originalRotation).magnitude <= rotationErrorTolerance;
+        //Debug.Log((originalPosition - new Vector3(point.x, point.y, originalPosition.z)).magnitude);
+        return (originalPosition - new Vector3(point.x, point.y, originalPosition.z)).magnitude <= distanceErrorTolerance;// && (transform.rotation.eulerAngles - originalRotation).magnitude <= rotationErrorTolerance;
     }
 
     internal void SetToPosition()
     {
         transform.position = originalPosition;
+        transform.rotation = Quaternion.Euler(originalRotation);
     }
 }

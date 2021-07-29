@@ -9,7 +9,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">你好</Line>
+		<Line name="main">你好, 在下是样式房掌案雷廷昌</Line>
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -17,13 +17,13 @@
 				<To>335, -106</To>
 				<Time>1</Time>
 			</Transform>
-			<Image name="main1"/>
+			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">你好</Line>
-		<Line name="main">我是一名工匠</Line>
-		<Line name="npc1">幸会幸会</Line>
-		<Line name="main">再见</Line>
-		<Line name="npc1">再见</Line>
+		<Line name="npc1">大人您好，大人是为了佛香阁的营造而来吧</Line>
+		<Line name="main">正是</Line>
+		<Line name="npc1">请大人继续往前走，前往集市，大人需要分别找到木作，石作，漆作的承包商，并完成每一步的准备工作</Line>
+		<Line name="npc1">当所有准备工作完成后，便可移步到集市尽头前往营造地点了</Line>
+		<Line name="main">事不宜迟，我这就动身前往</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
@@ -33,6 +33,7 @@
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
+		<Line name="npc1">大人慢走</Line>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
@@ -40,7 +41,7 @@
 				<To>335, -1067</To>
 				<Time>1</Time>
 			</Transform>
-			<Image name="main1"/>
+			<Image name="npc1"/>
 		</Figure>
 	</Scenario>
 
