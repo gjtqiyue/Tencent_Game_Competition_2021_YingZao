@@ -24,7 +24,7 @@ public class Menu : MonoBehaviour
         {
             if (Keyboard.current.anyKey.IsPressed() || Mouse.current.leftButton.IsPressed())
             {
-                Debug.Log("enter menu");
+                //Debug.Log("enter menu");
                 inMenu = true;
                 EnterMenu();
             }

@@ -23,19 +23,22 @@ public class BuildingScript : BaseControlUnit
     private BlueprintType currentBlueprint;
 
     [Header("Controled components")]
-    public BlueprintSelect blueprintSelect;
     public ComponentSelect componentSelect;
     public TextMeshProUGUI blueprintButtonText;
-    public GameObject blueprintImage;
+    public Image blueprintImage;
+    public GameObject blueprintPanel;
     public GameObject infoPanel;
     public Material previewMat;
     public PlayableDirector finalSequencePlayer;
     public GameObject blueprintButton;
     public Animator cameraSwitch;
     public AudioSource audio;
+    public AudioSource buildSound;
 
 
     [Header("Component data")]
+    [SerializeField]
+    private List<Sprite> blueprintImageList = new List<Sprite>();
     [SerializeField]
     private List<string> componentNameSet = new List<string>();
     [SerializeField]
@@ -73,12 +76,13 @@ public class BuildingScript : BaseControlUnit
     {
         base.Init();
 
-        blueprintImage.gameObject.SetActive(false);
+        blueprintPanel.gameObject.SetActive(false);
 
         mainParent = GameObject.Find("main building").transform;
         data = ConstructionData.LoadFromText(Resources.Load<TextAsset>("data").text);
         prefabTable = ComponentPrefabTable.LoadFromText(Resources.Load<TextAsset>("componentPrefabTable").text);
         blueprintButton.SetActive(false);
+        infoPanel.SetActive(false);
 
         buildTotal = Enum.GetValues(typeof(BlueprintType)).Length;
         buildProgress = 0;
@@ -142,7 +146,7 @@ public class BuildingScript : BaseControlUnit
 
         //Finish all the build, trigger the camera track
         audio.Stop();
-        Debug.Log("finish everything, trigger dolly track");
+        //Debug.Log("finish everything, trigger dolly track");
         finalSequencePlayer.Play();
         while (finalSequencePlayer.state == PlayState.Playing)
         {
@@ -153,7 +157,7 @@ public class BuildingScript : BaseControlUnit
 
     IEnumerator PreConststurction(BlueprintType t, Blueprint b)
     {
-        Debug.Log("Pre process for construction step");
+        //Debug.Log("Pre process for construction step");
         if (preScenarioMap.Get(t) != "")
         {
             DialogueManager.GetInstance().TriggerScenario(preScenarioMap.Get(t));
@@ -161,8 +165,13 @@ public class BuildingScript : BaseControlUnit
         }
 
         //TODO: feed corresponding blueprint as input
-        yield return StartCoroutine(ViewBlueprint());
-        blueprintButton.SetActive(true);
+        //get blueprint image
+        if (b.blueprint != null)
+        {
+            blueprintImage.sprite = blueprintImageList[int.Parse(b.blueprint)];
+            yield return StartCoroutine(ViewBlueprint());
+            blueprintButton.SetActive(true);
+        }
 
         //populate component UI
         string[] list = b.componentList.Split(',');
@@ -180,7 +189,7 @@ public class BuildingScript : BaseControlUnit
 
     IEnumerator PostConstruction(BlueprintType t)
     {
-        Debug.Log("Post process for construction step");
+        //Debug.Log("Post process for construction step");
         cameraSwitch.Play("InitState");
         if (postScenarioMap.Get(t) != "")
         {
@@ -193,8 +202,8 @@ public class BuildingScript : BaseControlUnit
     {
         isBlueprintOpen = true;
         //show blueprint
-        blueprintButtonText.text = "¹Ø±ÕÀ¶Í¼";
-        blueprintImage.SetActive(true);
+        //blueprintButtonText.text = "¹Ø±ÕÀ¶Í¼";
+        blueprintPanel.SetActive(true);
         //wait for user input
         bool confirmed = false;
         while (!confirmed)
@@ -202,8 +211,8 @@ public class BuildingScript : BaseControlUnit
             if (inputEnabled && (Keyboard.current.anyKey.isPressed || Mouse.current.leftButton.isPressed)) confirmed = true;
             yield return new WaitForEndOfFrame();
         }
-        blueprintImage.SetActive(false);
-        blueprintButtonText.text = "´ò¿ªÀ¶Í¼";
+        blueprintPanel.SetActive(false);
+        //blueprintButtonText.text = "´ò¿ªÀ¶Í¼";
         isBlueprintOpen = false;
     }
 
@@ -215,7 +224,7 @@ public class BuildingScript : BaseControlUnit
         while (order != b.orders.Count)
         {
             currentStep = b.orders[order];
-            Debug.Log("current order " + order);
+            //Debug.Log("current order " + order);
             //while there is still component left
             while (true)
             {
@@ -249,6 +258,9 @@ public class BuildingScript : BaseControlUnit
                     //if click button, then leave the object permanently
                     if (Mouse.current.leftButton.isPressed && hasHit)
                     {
+                        //play sound
+                        buildSound.Play();
+
                         allPossibleSpawnPoints.Remove(previewGameObjects[hit.collider.gameObject]);
                         foreach (GameObject key in previewGameObjects.Keys)
                         {
@@ -274,7 +286,7 @@ public class BuildingScript : BaseControlUnit
                         {
                             Vector3 loc = new Vector3(info.px, info.py, info.pz);
                             Quaternion rot = Quaternion.Euler(info.rx, info.ry, info.rz);
-                            Debug.Log(loc.ToString());
+                            //Debug.Log(loc.ToString());
                             GameObject gameObj = Instantiate(toSpawn, mainParent.position + loc * mainParent.localScale.x, rot, mainParent);
                             gameObj.GetComponent<Collider>().enabled = false;
                         }
@@ -309,7 +321,7 @@ public class BuildingScript : BaseControlUnit
         // If the info panel is still active we need to wait until the player closes it and then we can go to the next stage
         while (infoPanel.activeSelf) { yield return new WaitForEndOfFrame(); }
 
-        Debug.Log("finish all steps");
+        //Debug.Log("finish all steps");
         buildProgress++;
         blueprintBuildFinishDelegate?.Invoke();
         Reset();    //reset and go to next stage
@@ -327,7 +339,7 @@ public class BuildingScript : BaseControlUnit
     {
         if (allPossibleSpawnPoints.Count == 0)
         {
-            Debug.Log("finish current compoenent build");
+            //Debug.Log("finish current compoenent build");
             ShowInfoPanel(component.info, component.img);
 
             currentStep.components.Remove(component);   //remove current component from step list
@@ -335,7 +347,7 @@ public class BuildingScript : BaseControlUnit
 
         if (currentStep.components.Count == 0)
         {
-            Debug.Log("finish step");
+            //Debug.Log("finish step");
             return true;
         }
 
@@ -347,7 +359,7 @@ public class BuildingScript : BaseControlUnit
         if (buildProgress >= buildTotal)
         {
             //Finish all the build, trigger the camera track
-            Debug.Log("finish everything, trigger dolly track");
+            //Debug.Log("finish everything, trigger dolly track");
             Camera.current.enabled = false;
             finalSequencePlayer.Play();
         }
@@ -356,6 +368,7 @@ public class BuildingScript : BaseControlUnit
     internal void SpawnComponent(string v)
     {
         if (isBlueprintOpen) return;
+        if (infoPanel.activeSelf) return;
         ResetSpawnedObjects();
 
         string name = "";
@@ -392,7 +405,7 @@ public class BuildingScript : BaseControlUnit
                     ComponentTransformInfo info = allPossibleSpawnPoints[j];
                     loc = new Vector3(info.px, info.py, info.pz);
                     rot = Quaternion.Euler(info.rx, info.ry, info.rz);
-                    Debug.Log(loc.ToString());
+                    //Debug.Log(loc.ToString());
                     GameObject gameObj = Instantiate(toSpawn, mainParent.position + loc * mainParent.localScale.x, rot, mainParent);
                     //change material to preview material
                     if (gameObj.GetComponent<MeshRenderer>())

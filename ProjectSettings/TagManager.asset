@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Interactable
   - WoodCutPoint
+  - ColorPatternPiece
+  - ColorPaintPiece
   layers:
   - Default
   - TransparentFX

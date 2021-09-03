@@ -22,7 +22,7 @@ public class TextFlush : MonoBehaviour
 
     private void OnDisable()
     {
-        Debug.Log("Loop end");
+        //Debug.Log("Loop end");
         if (loop != null) loop.setLoopCount(0);
     }
 }

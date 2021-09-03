@@ -35,8 +35,8 @@
 		<Entry Name="雀替">
 			<Prefab>雀替</Prefab>
 		</Entry>
-		<Entry Name="地基">
-			<Prefab>地基</Prefab>
+		<Entry Name="台基">
+			<Prefab>台基</Prefab>
 		</Entry>
 		<Entry Name="二层">
 			<Prefab>二层</Prefab>

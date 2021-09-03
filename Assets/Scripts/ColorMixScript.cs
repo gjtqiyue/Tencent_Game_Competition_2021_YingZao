@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
-
-
+using UnityEngine.UI;
 
 public class ColorMixScript : BaseControlUnit
 {
@@ -38,19 +37,28 @@ public class ColorMixScript : BaseControlUnit
     }
 
     public TextMeshProUGUI stepRemainUI;
+    public TextMeshProUGUI receipeUI;
+    public TextMeshProUGUI ratioUI;
+    public Image potImage;
+    public AudioClip successSound;
+    public AudioClip failSound;
+    public IconDictionary iconList;
     List<ColorMixRecipe> receipes;
     [SerializeField] List<ColorMixToolEnum> currentMixing;
     ColorMixToolEnum currentSelect;
+    AudioSource sound;
 
     protected override void Init()
     {
         base.Init();
 
         receipes = new List<ColorMixRecipe>();
-        //ColorMixRecipe r1 = new ColorMixRecipe(new List<string> { "白" }, 2, 1);
-        //ColorMixRecipe r2 = new ColorMixRecipe(new List<string> { "青" }, 1, 3);
-        //receipes.Add(r1);
-        //receipes.Add(r2);
+        ColorMixRecipe r1 = new ColorMixRecipe(new List<string> { "青","红" }, 2, 1);
+        ColorMixRecipe r2 = new ColorMixRecipe(new List<string> { "青","绿","红","青" }, 2, 2);
+        receipes.Add(r1);
+        receipes.Add(r2);
+
+        sound = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -99,7 +107,17 @@ public class ColorMixScript : BaseControlUnit
 
     IEnumerator PreMixingStep(ColorMixRecipe r)
     {
-        yield return null;
+        //show needed color
+        string text = "";
+        for (int i=0; i<r.colorOrder.Count; i++)
+        {
+            text += r.colorOrder[i] + ",";
+        }
+        receipeUI.text = text;
+        potImage.color = new Color(1, 1, 1, 0);
+        //show needed ratio
+        ratioUI.text = "配方：颜料+" + r.waterRatio + "x水+" + r.glueRatio + "x骨胶";
+        yield return new WaitForEndOfFrame();
     }
 
     IEnumerator MixingStep(ColorMixRecipe r)
@@ -124,8 +142,8 @@ public class ColorMixScript : BaseControlUnit
             }
             else
             {
-                Debug.Log("failed");
-                DialogueManager.GetInstance().TriggerScenario("FailedAtColorMix");
+                sound.PlayOneShot(failSound);
+                //DialogueManager.GetInstance().TriggerScenario("FailedAtColorMix");
                 yield return new WaitUntil(DialogueManager.GetInstance().Finished);
                 
             }
@@ -137,15 +155,15 @@ public class ColorMixScript : BaseControlUnit
 
     IEnumerator PostMixingStep(ColorMixRecipe r)
     {
+        potImage.color = new Color(1, 1, 1, 0);
+        sound.PlayOneShot(successSound);
         yield return new WaitForEndOfFrame();
-        //play the succeed sound
     }
 
 
 
     public void ResetMix()
     {
-        Debug.Log("reset mixing");
         currentMixing.Clear();
         //reset color
     }
@@ -166,13 +184,17 @@ public class ColorMixScript : BaseControlUnit
 
         currentMixing.Add(currentSelect);
 
-        //trigger post effect
+        //trigger pot effect
+        potImage.color = new Color(1, 1, 1, 1);
+        string select = Enum.GetName(typeof(ColorMixToolEnum), currentSelect);
+        if (iconList.ContainsKey(select))
+            potImage.sprite = iconList.Get(select);
     }
 
     
     public void SelectTool(string tool)
     {
-        Debug.Log(tool);
+        //Sprite s = iconList.Get(tool);
         currentSelect = (ColorMixToolEnum)Enum.Parse(typeof(ColorMixToolEnum), tool);
     }
 }

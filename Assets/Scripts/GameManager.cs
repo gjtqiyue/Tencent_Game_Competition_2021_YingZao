@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadAsyncOperation(string sceneToLoad)
     {
-        Debug.Log("[" + Time.time + "]" + " Start loading scene " + sceneToLoad + " ...");
+        //Debug.Log("[" + Time.time + "]" + " Start loading scene " + sceneToLoad + " ...");
         //create an async operation
         AsyncOperation gameLevel = SceneManager.LoadSceneAsync(sceneToLoad);
 
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
         //update state
         if (sceneToLoad == "Menu") gameState = GameState.InMenu;
         else gameState = GameState.InGame;
-        Debug.Log("[" + Time.time + "]" + " Finish loading " + sceneToLoad);
+        //Debug.Log("[" + Time.time + "]" + " Finish loading " + sceneToLoad);
     }
 
     /* Game pause */
@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameState == GameState.Paused) return;
         
-        Debug.Log("[" + Time.time + "]" + " Pause Game");
+        //Debug.Log("[" + Time.time + "]" + " Pause Game");
         gamePauseDelegate?.Invoke();
         gameState = GameState.Paused;
     }
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         if (gameState != GameState.Paused) return;
-        Debug.Log("[" + Time.time + "]" + " Resume Game");
+        //Debug.Log("[" + Time.time + "]" + " Resume Game");
         Time.timeScale = 1;
         gameResumeDelegate?.Invoke();
         gameState = GameState.InGame;
@@ -266,7 +266,7 @@ public class GameManager : MonoBehaviour
         GameObject intro = GameObject.Find("IntroSequence");
         PlayableDirector d = intro.GetComponent<PlayableDirector>();
         if (d == null) Debug.LogError("No PlayableDirector found for intro sequence");
-        Debug.Log("Play Intro");
+        //Debug.Log("Play Intro");
         d.Play();
     }
 

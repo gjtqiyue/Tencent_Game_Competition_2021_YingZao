@@ -3,32 +3,32 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">你好, 在下是样式房掌案雷廷昌</Line>
+		<Line name="main">你好, 在下样式房掌案雷廷昌大人门下雷家子弟</Line>
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>335, -1067</From>
-				<To>335, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">大人您好，大人是为了佛香阁的营造而来吧</Line>
+		<Line name="npc1">大人，可是为了佛香阁而来</Line>
 		<Line name="main">正是</Line>
-		<Line name="npc1">请大人继续往前走，前往集市，大人需要分别找到木作，石作，漆作的承包商，并完成每一步的准备工作</Line>
+		<Line name="npc1">请继续往前走，前往集市，雷兄需要分别找到木作，石作，彩画作的承接商家，并完成每一步的准备工作</Line>
 		<Line name="npc1">当所有准备工作完成后，便可移步到集市尽头前往营造地点了</Line>
 		<Line name="main">事不宜迟，我这就动身前往</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -37,8 +37,8 @@
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>335, -106</From>
-				<To>335, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="npc1"/>
@@ -49,23 +49,24 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
 		<Line name="main">佛香阁开工动土之期已至</Line>
 		<Line name="main">修建之事步骤繁多，每一步都要经过细致考量</Line>
-		<Line name="main">若是对修建之事有疑惑，我可查看工事图纸</Line>
-		<Line name="main">根据图纸，体验建筑的搭建顺序</Line>
-		<Line name="main">差点忘了，按住鼠标右键拖动可以转动镜头，全方位观察</Line>
-		<Line name="main">事不宜迟，这便开始吧</Line>
+		<Line name="main">若是对修建之事有疑惑，可查看左上角的工事图纸</Line>
+		<Line name="main">根据图纸，按顺序完成建筑的搭建</Line>
+		<Line name="main">按住鼠标右键拖动可以转动镜头，全方位观察佛香阁</Line>
+		<Line name="main">建筑的搭建并非易事，前期的过程十分繁杂和重复，但是坚持到后面会越来越轻松</Line>
+		<Line name="main">开工！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -76,43 +77,43 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
 		<Line name="main">第一层阁楼已搭建完成</Line>
-		<Line name="main">想必这营造步骤也已了然于心</Line>
-		<Line name="main">后面的步骤与之相似，我便加快速度吧</Line>
+		<Line name="main">想必已对这营造步骤烂熟于心</Line>
+		<Line name="main">后面的步骤与之相似，便加快速度吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">为节省时间，后面的步骤已经省略，可直接搭建成品</Line>
+		<Line name="main">后面的细节搭建步骤已省略</Line>
 	</Scenario>
 
 	<Scenario name="FinishSecond" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第二层完成了</Line>
+		<Line name="main">第二层完工</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -123,8 +124,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -133,8 +134,8 @@
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -145,8 +146,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -155,8 +156,8 @@
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -167,18 +168,18 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">第四层乃最重要的一步，这房顶的搭建极为考究，同时也是最危险的一步</Line>
+		<Line name="main">第四层乃最重要的一步，这阁顶的搭建极为考究</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -189,21 +190,21 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
 		<Line name="main">至此，佛香阁的修建基本告竣</Line>
-		<Line name="main">其余彩画绘制、游廊修建等事另有处理</Line>
-		<Line name="main">这便是前临湖水，后倚山麓的佛香阁了</Line>
-		<Line name="main">让我们先稍事休息，欣赏我们的成果吧</Line>
+		<Line name="main">其余阁内彩画绘制、阁外游廊修建等事另有处理，还远没有结束</Line>
+		<Line name="main">我也不负雷家传承多年的名声，将这建筑设计的技艺学到手</Line>
+		<Line name="main">现在让我们先稍事休息，欣赏这前临湖水，后倚山麓的佛香阁吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>1</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -215,31 +216,31 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">在下是样式房掌案雷廷昌</Line>
+		<Line name="main">在下是样式房掌案雷廷昌大人门下雷家子弟</Line>
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">在下是钦工处专员</Line>
+		<Line name="npc1">在下是钦工处木作专员</Line>
 		<Line name="main">幸会</Line>
-		<Line name="main">我要做木作</Line>
-		<Line name="npc1">雷大人请</Line>
+		<Line name="main">请带我看下木作的情况吧</Line>
+		<Line name="npc1">雷兄请</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -247,8 +248,8 @@
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
@@ -258,8 +259,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -267,29 +268,30 @@
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">您已经完成木作所有的准备工作</Line>
-		<Line name="npc1">完成石作和漆作之后，大人就可以着手营造了</Line>
+		<Line name="npc1">木作所有的准备工作已完成</Line>
+		<Line name="npc1">请继续准备石作和彩画作</Line>
+		<Line name="main">再会</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="npc1">大人慢走</Line>
+		<Line name="npc1">慢走</Line>
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
@@ -300,30 +302,31 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">在下雷廷昌</Line>
+		<Line name="main">在下是样式房掌案雷廷昌大人门下雷家子弟</Line>
 		<Figure target="npc2" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
 		<Line name="npc2">在下是钦工处石作专员</Line>
-		<Line name="main">我需要做石作</Line>
-		<Line name="npc2">请大人跟我来</Line>
+		<Line name="main">幸会</Line>
+		<Line name="main">请带我看下石作的情况吧</Line>
+		<Line name="npc2">雷兄请</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -331,8 +334,8 @@
 		<Figure target="npc2" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
@@ -342,8 +345,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -351,20 +354,20 @@
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
 		<Line name="npc1">石作所有的准备工作已完成</Line>
-		<Line name="npc1">请大人抓紧完成木作和漆作吧</Line>
+		<Line name="npc1">请雷兄抓紧完成木作和彩画作吧</Line>
 		<Line name="main">再会</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -373,42 +376,43 @@
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
 	</Scenario>
-	
+
 	<Scenario name="ColorWorkTalk" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">在下是雷廷昌</Line>
+		<Line name="main">在下是样式房掌案雷廷昌大人门下雷家子弟</Line>
 		<Figure target="npc3" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc3">雷大人</Line>
-		<Line name="main">我需要漆作</Line>
-		<Line name="npc3">这边请</Line>
+		<Line name="npc3">在下是钦工处彩画作专员</Line>
+		<Line name="main">幸会</Line>
+		<Line name="main">请带我看下彩画作的情况吧</Line>
+		<Line name="npc3">雷兄请</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -416,8 +420,8 @@
 		<Figure target="npc3" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
@@ -427,8 +431,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -436,20 +440,20 @@
 		<Figure target="npc1" type="entrance">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -1067</From>
-				<To>455, -106</To>
+				<From>747, -1067</From>
+				<To>747, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
-		<Line name="npc1">大人，漆作已经结束</Line>
-		<Line name="npc1">抓紧时间着手其他的准备工作吧</Line>
+		<Line name="npc1">彩画作所有的准备工作已完成</Line>
+		<Line name="npc1">请雷兄抓紧完成其余之事吧</Line>
 		<Line name="main">再会</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -458,32 +462,54 @@
 		<Figure target="npc1" type="exit">
 			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>455, -106</From>
-				<To>455, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="npc1"/>
 		</Figure>
 	</Scenario>
 
-	
+
 	<Scenario name="NotThereYet" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">我还没有做好所有的准备工作</Line>
-		<Line name="main">我需要完成木作，石作和漆作，才可以开始施工</Line>
+		<Line name="main">我还尚未完成所有的准备工作</Line>
+		<Line name="main">我需要完成木作，石作和彩画作，才可以开始施工</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main1"/>
+		</Figure>
+	</Scenario>
+
+	<Scenario name="ReadyToGo" isLoop="False">
+		<Figure target="main" type="entrance">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Line name="main">三项准备工作已经全部完成，立即开启佛香阁的营造吧</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -495,23 +521,23 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">木工是建筑工序里必不可少的一环，我们需要对木头进行切割处理，才可以进一步做成需要的形状</Line>
+		<Line name="main">木作是建筑工序里必不可少的一环，我们需要对木头进行切割处理，才可以进一步做成需要的形状</Line>
 		<Line name="main">接下来我会讲解具体的操作方式</Line>
-		<Line name="main">我们需要切一定数量的木头，完成度会在左上角显示</Line>
-		<Line name="main">使用W和S键控制红点上下移动来切割黄色的线</Line>
-		<Line name="main">每一个木头需要精准切割80%以上才可以通过</Line>
+		<Line name="main">我们需要切割一定数量的木头，会有完成度的显示</Line>
+		<Line name="main">使用W键和S键控制红点上下移动来切割黄色的线</Line>
+		<Line name="main">每一个木头需要精准切割80%以上才可以通过测验</Line>
 		<Line name="main">让我们试试吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -522,18 +548,18 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">木工结束了，抓紧时间前往下一个地点吧。</Line>
+		<Line name="main">木作结束了，抓紧时间前往下一个地点吧。</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -544,18 +570,20 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">石作指引</Line>
+		<Line name="main">石作，自宋《营造法式》中记载，内容包括粗材加工，雕饰，以及柱础、台基、坛、地面、台阶、栏杆、门砧限、水槽、上马石、夹杆石、碑碣拱门等的制作和安装</Line>
+		<Line name="main">自我朝以来，又增加了石桌、 绣墩、 花盆座、石狮等建筑部件的制作和安装，但不包括石拱门</Line>
+		<Line name="main">石作，涉及大量的凿刻，需要大量的人力，所以这些外包程序是十分关键的</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -566,21 +594,43 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
+				<Time>0.1</Time>
+			</Transform>
+			<Image name="main2"/>
+		</Figure>
+		<Figure target="npc2" type="entrance">
+			<ScreenPosition>right</ScreenPosition>
+			<Transform>
+				<From>747, -1067</From>
+				<To>747, -343</To>
+				<Time>0.5</Time>
+			</Transform>
+			<Image name="npc1"/>
+		</Figure>
+		<Line name="npc2">雷大人久等！</Line>
+		<Line name="npc2">今日掌柜的有事不在，所以我们暂不接单、</Line>
+		<Line name="main">那可如何是好，我还有佛香阁的工期要赶啊</Line>
+		<Line name="npc2">大人别急，这里有一些早已准备好的石作成品，雷大人先拿去用吧</Line>
+		<Line name="main">太好了，那石作就先告一段落了</Line>
+		<Figure target="main" type="exit">
+			<ScreenPosition>left</ScreenPosition>
+			<Transform>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">成功完成石作</Line>
-		<Figure target="main" type="exit">
-			<ScreenPosition>left</ScreenPosition>
+		<Figure target="npc2" type="exit">
+			<ScreenPosition>right</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>747, -343</From>
+				<To>747, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
-			<Image name="main2"/>
+			<Image name="npc1"/>
 		</Figure>
 	</Scenario>
 
@@ -588,21 +638,21 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">接下来是漆作环节，顾名思义，这部分是围绕漆和上色的。总共需要三个步骤，油漆调色，彩画制作，以及彩画上色。你需要完成每一步才可以成功。</Line>
+		<Line name="main">接下来是彩画作环节，顾名思义，这部分是围绕彩画绘制和上色的。总共需要三个步骤，调制颜料，绘制彩画，以及彩画上色。你需要按序完成每一步才可以成功。</Line>
 	</Scenario>
 
 	<Scenario name="ColorWorkMixGameIntro" isLoop="False">
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -610,14 +660,14 @@
 		<Line name="main">调色的门道可是很深呐</Line>
 		<Line name="main">要调色，我们需要按一定的比例混合颜料，水和骨胶</Line>
 		<Line name="main">这一步，顺序和比例都十分重要</Line>
-		<Line name="main">首先我们要加颜料</Line>
+		<Line name="main">首先我们要加颜料，根据左边的颜色顺序，点击想要选择的颜色，再点击中间的调制锅混入</Line>
 		<Line name="main">颜料加过后，按照水的比例加水，骨胶同理</Line>
 		<Line name="main">随后我们再开始加入第二层颜料，以此类推，直到加入所有需要的颜料即可</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -628,8 +678,8 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -638,8 +688,8 @@
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -650,20 +700,20 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">彩画的绘制可以很简单也可以很复杂，而这一步我们要做的就是把这彩画的线图画出来</Line>
+		<Line name="main">彩画的绘制这一步我们要做的就是把这彩画的线图画出来</Line>
 		<Line name="main">你将有5秒钟的时间记住彩画的图案，然后根据记忆来把未完成的彩画完成</Line>
 		<Line name="main">按住鼠标，拖动目标部件，然后把它放进不同的位置上去，注意因为彩画是对称的，所以一片图案可以对应多个地方，请慎重选择</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -674,18 +724,18 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">彩画终于制作完成，接下来就是最后一步，上色！</Line>
+		<Line name="main">彩画终于绘制完成，接下来就是最后一步，上色！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -696,19 +746,19 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">上漆，我们需要根据对照图选择对应的颜色涂抹对应的区域</Line>
-		<Line name="main">所有需要的颜色已准备好，所以只需要选择对应的颜色便可成功上漆</Line>
+		<Line name="main">上色，我需要根据对照图来使用对应的颜色</Line>
+		<Line name="main">所有需要的颜色已准备好，所以只需要选择对应的颜色，点击上色的区域，便可成功上色</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>
@@ -719,18 +769,18 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -1067</From>
-				<To>-493, -343</To>
+				<From>-741, -1067</From>
+				<To>-741, -343</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main2"/>
 		</Figure>
-		<Line name="main">上漆结束啦！</Line>
+		<Line name="main">上色完成！</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main2"/>
@@ -741,18 +791,18 @@
 		<Figure target="main" type="entrance">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -343</To>
+				<From>-741, -343</From>
+				<To>-741, -343</To>
 				<Time>0.1</Time>
 			</Transform>
 			<Image name="main1"/>
 		</Figure>
-		<Line name="main">这样我们的漆作就先告一段落了，我们继续找其他的作坊吧</Line>
+		<Line name="main">这样我们的彩画作就先告一段落了，我们继续找其他的作坊吧</Line>
 		<Figure target="main" type="exit">
 			<ScreenPosition>left</ScreenPosition>
 			<Transform>
-				<From>-493, -343</From>
-				<To>-493, -1067</To>
+				<From>-741, -343</From>
+				<To>-741, -1067</To>
 				<Time>0.5</Time>
 			</Transform>
 			<Image name="main1"/>

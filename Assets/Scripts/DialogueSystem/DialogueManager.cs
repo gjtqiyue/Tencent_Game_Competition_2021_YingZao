@@ -160,14 +160,14 @@ public class DialogueManager : BaseControlUnit
 
             if (allowSkip)
             {
-                if (skipTrigger && Mouse.current.leftButton.isPressed)
+                if (skipTrigger && InputCheck())
                 {
                     //print the whole string
                     view.UpdateLineView(character, text);
                     skipTrigger = false;
                     while (true)
                     {
-                        if (inputEnabled && !skipTrigger && Mouse.current.leftButton.wasPressedThisFrame)
+                        if (inputEnabled && !skipTrigger && InputCheck())
                         {
                             skipTrigger = true;
                             i = text.Length + 1;
@@ -188,13 +188,18 @@ public class DialogueManager : BaseControlUnit
         bool nextLine = false;
         while (!nextLine)
         {
-            if (inputEnabled && skipTrigger && Mouse.current.leftButton.isPressed) { skipTrigger = false; }
-            if (inputEnabled && !skipTrigger && Mouse.current.leftButton.wasReleasedThisFrame) { nextLine = true; skipTrigger = true; }
+            if (inputEnabled && skipTrigger && InputCheck()) { skipTrigger = false; }
+            if (inputEnabled && !skipTrigger && InputCheck()) { nextLine = true; skipTrigger = true; }
             yield return new WaitForSeconds(0.0001f);
         }
 
         //callback
         OnDialogueEventFinish();
+    }
+
+    private bool InputCheck()
+    {
+        return Mouse.current.leftButton.isPressed || Keyboard.current.spaceKey.isPressed;
     }
 
     public void OnDialogueEventFinish()

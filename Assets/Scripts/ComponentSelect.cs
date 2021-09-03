@@ -64,6 +64,7 @@ public class ComponentSelect : MonoBehaviour
 
             objs.Add(gameObj);
             componentNameSet.RemoveAt(i);
+            componentImageSet.RemoveAt(i);
         }
 
         yield return new WaitForSeconds(0.2f);

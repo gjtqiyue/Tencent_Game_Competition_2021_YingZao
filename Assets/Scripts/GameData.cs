@@ -25,7 +25,6 @@ public enum ColorMixToolEnum
     °×,
     Çà,
     ºì,
-    ·²È¾³à»Æ,
     ÂÌ,
     Ë®,
     ¹Ç½º

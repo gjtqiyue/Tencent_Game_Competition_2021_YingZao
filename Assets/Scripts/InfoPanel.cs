@@ -6,7 +6,7 @@ using TMPro;
 
 public class InfoPanel : MonoBehaviour
 {
-    float endX;
+    float endY;
     [SerializeField]
     float fadeDistance;
     [SerializeField]
@@ -20,20 +20,19 @@ public class InfoPanel : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        endX = rectTransform.position.x;
-        rectTransform.position = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
-        gameObject.SetActive(false);
+        endY = rectTransform.position.y;
+        rectTransform.position = new Vector3(transform.position.x, endY + fadeDistance, transform.position.z);
     }
 
     private void OnEnable()
     {
-        rectTransform.position = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
-        LeanTween.move(this.gameObject, new Vector3(endX, rectTransform.position.y, rectTransform.position.z), fadeSpeed);
+        rectTransform.position = new Vector3(transform.position.x, endY + fadeDistance, transform.position.z);
+        LeanTween.move(this.gameObject, new Vector3(transform.position.x, endY, rectTransform.position.z), fadeSpeed);
     }
 
     public void Disable()
     {
-        Vector3 pos = new Vector3(endX + fadeDistance, transform.position.y, transform.position.z);
+        Vector3 pos = new Vector3(transform.position.x, endY + fadeDistance, transform.position.z);
         LeanTween.move(this.gameObject, pos, fadeSpeed).setOnComplete(()=> { gameObject.SetActive(false); });
     }
 

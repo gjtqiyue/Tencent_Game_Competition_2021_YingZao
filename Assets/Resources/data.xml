@@ -2,11 +2,11 @@
 
 <ConstructionData>
 	<Blueprints>
-		<Blueprint Name="基层" ComponentList="0,1,2,3,4,5,6,7,8,9,10,11">
+		<Blueprint Name="基层" ComponentList="0,1,2,3,4,5,6,7,8,9,10,11" BlueprintIdx="0">
 			<ConstructionOrders>
 				<ConstructionOrder>
 					<Components>
-						<Component Name="地基" Info="地基，是指基础以下的部分，承受着全部建筑物重量的土层或岩石，统称地基。地基可分为自然地基和人工地基。台基是建筑的基座，即建在地面上的方座部分。台基的上平面就是室内地坪，四周边称为“台帮”，将柱础、磉墩、拦土墙全部包砌在台帮内，这样就构成了台基。" Img="地基">
+						<Component Name="台基" Info="地基，是指基础以下的部分，承受着全部建筑物重量的土层或岩石，统称地基。地基可分为自然地基和人工地基。台基是建筑的基座，即建在地面上的方座部分。台基的上平面就是室内地坪，四周边称为“台帮”，将柱础、磉墩、拦土墙全部包砌在台帮内，这样就构成了台基。" Img="地基">
 							<TransformInfo>
 								<ComponentTransformInfo>
 									<PX>0.002915874</PX>

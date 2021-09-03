@@ -11,6 +11,8 @@ public class Blueprint
     public string name;
     [XmlAttribute("ComponentList")]
     public string componentList;
+    [XmlAttribute("BlueprintIdx")]
+    public string blueprint;    //an index number refering to the index of blueprint array in building manager
 
     [XmlArray("ConstructionOrders")]
     [XmlArrayItem("ConstructionOrder")]
