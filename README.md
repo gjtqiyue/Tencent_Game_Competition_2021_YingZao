@@ -4,10 +4,10 @@
 Made by Unity 2021.1.9f1
 
 Team setup：
-3D Artist
-2D Artist
-Game designer
-Game programmer
+3D Artist， 
+2D Artist， 
+Game designer， 
+Game programmer， 
 
 ![image](https://user-images.githubusercontent.com/26337901/157557445-0063efc0-5670-4c29-ba48-4a529d412c81.png)
 
