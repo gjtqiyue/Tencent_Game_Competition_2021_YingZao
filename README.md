@@ -9,6 +9,8 @@ Team setup：
 Game designer， 
 Game programmer
 
+游戏视频预览：https://v.qq.com/x/page/z32648u1g75.html
+
 ![image](https://user-images.githubusercontent.com/26337901/157557445-0063efc0-5670-4c29-ba48-4a529d412c81.png)
 
 ![image](https://user-images.githubusercontent.com/26337901/157557301-930fb0a3-c51a-41c1-823f-7d4ae9e217e6.png)
