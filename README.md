@@ -1,6 +1,15 @@
-# Tencent Game Competition 2021
+# Tencent Game Competition 2021 
+# 腾讯2021游戏大赛 参赛作品 營造
 
 Made by Unity 2021.1.9f1
+
+Team setup：
+3D Artist， 
+2D Artist， 
+Game designer， 
+Game programmer
+
+游戏视频预览：https://v.qq.com/x/page/z32648u1g75.html
 
 ![image](https://user-images.githubusercontent.com/26337901/157557445-0063efc0-5670-4c29-ba48-4a529d412c81.png)
 
